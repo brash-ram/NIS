@@ -6,7 +6,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="css/main.css" />
 
     <%-- Google Fonts --%>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,22 +21,14 @@
     <div class="page">
         <header>
             <div class="logo-wrapper">
-                NIS (Network Information System)
+                Стартовая странца
             </div>
         </header>
         <main class="container-fluid">
             <div class="form-wrapper">
-                <form action="" class="login-form" method="get">
+                <form action="login" class="login-form" method="get">
                     <div class="form-group">
-                        <label for="loginInput">Логин</label>
-                        <input type="text" name="login" class="form-control" id="loginInput">
-                    </div>
-                    <div class="form-group">
-                        <label for="passwordInput">Пароль</label>
-                        <input type="password" name="password" class="form-control" id="passwordInput">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn submit-btn">Войти</button>
+                        <button type="submit" class="btn submit-btn" >Авторизоваться</button>
                     </div>
                 </form>
             </div>
