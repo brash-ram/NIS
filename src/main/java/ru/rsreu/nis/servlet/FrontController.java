@@ -43,7 +43,7 @@ public class FrontController extends HttpServlet {
     private FrontCommand getCommand(HttpServletRequest request) {
         try {
             String str = String.format(
-                    "ru.rsreu.officetechnics.commands.%sCommand",
+                    "ru.rsreu.nis.servlet.command.%sCommand",
                     StringUtils.capitalize(request.getPathInfo().substring(1)));
             Class<?> type = Class.forName(str);
             return type

@@ -5,12 +5,13 @@
          version="4.0">
 
     <servlet>
-        <servlet-name>FrontController</servlet-name>
+        <servlet-name>FrontControllerServlet</servlet-name>
         <servlet-class>ru.rsreu.nis.servlet.FrontController</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>FrontController</servlet-name>
+        <servlet-name>FrontControllerServlet</servlet-name>
         <url-pattern>/nis/*</url-pattern>
     </servlet-mapping>
+
 </web-app>

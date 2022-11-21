@@ -6,7 +6,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="../css/main.css" />
 
     <%-- Google Fonts --%>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
             <div class="form-wrapper">
                 <form action="login" class="login-form" method="get">
                     <div class="form-group">
-                        <button type="submit" class="btn submit-btn" >Авторизоваться</button>
+                        <button class="btn submit-btn" >Авторизоваться</button>
                     </div>
                 </form>
             </div>
