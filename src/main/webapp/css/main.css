@@ -133,6 +133,15 @@ header .logo-wrapper {
     transition: all 0.6s;
 }
 
+.actionsContainer {
+
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+}
+
 footer {}
 
 

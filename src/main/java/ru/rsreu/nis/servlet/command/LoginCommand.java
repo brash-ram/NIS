@@ -23,8 +23,7 @@ public class LoginCommand extends FrontCommand {
     public void send() throws ServletException, IOException {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
-
-
-        return;
+        request.setAttribute("mainContent", "");
+        forward("mainContainer");
     }
 }

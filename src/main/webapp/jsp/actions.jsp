@@ -8,9 +8,28 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Actions</title>
 </head>
 <body>
+
+<div>
+    <div class="actionsContainer">
+        <header>
+            <div class="logo-wrapper">
+                Действия
+            </div>
+        </header>
+        <main class="container-fluid">
+            <div class="form-wrapper">
+                <ul>
+                    <li><a href="">Список пользователей</a></li>
+                    <li><a href="">Список заблокированных пользователей</a></li>
+                </ul>
+            </div>
+        </main>
+        <footer></footer>
+    </div>
+</div>
 
 </body>
 </html>
