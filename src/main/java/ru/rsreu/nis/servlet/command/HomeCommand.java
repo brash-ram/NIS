@@ -1,5 +1,6 @@
 package ru.rsreu.nis.servlet.command;
 
+import ru.rsreu.nis.resourcer.ProjectResourcer;
 import ru.rsreu.nis.servlet.FrontCommand;
 
 import javax.servlet.ServletContext;

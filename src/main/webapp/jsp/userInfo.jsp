@@ -11,6 +11,21 @@
     <title>Title</title>
 </head>
 <body>
-
+<div class="actionsContainer">
+    <header>
+        <div class="logo-wrapper">
+            Пользователь
+        </div>
+    </header>
+    <main class="container-fluid">
+        <div class="form-wrapper">
+            <ul>
+                <li><a href="">Список пользователей</a></li>
+                <li><a href="">Список заблокированных пользователей</a></li>
+            </ul>
+        </div>
+    </main>
+    <footer></footer>
+</div>
 </body>
 </html>
