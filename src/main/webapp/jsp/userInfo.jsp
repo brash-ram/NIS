@@ -20,8 +20,8 @@
     <main class="container-fluid">
         <div class="form-wrapper">
             <ul>
-                <li><a href="">Список пользователей</a></li>
-                <li><a href="">Список заблокированных пользователей</a></li>
+                <li>
+                </li>
             </ul>
         </div>
     </main>
