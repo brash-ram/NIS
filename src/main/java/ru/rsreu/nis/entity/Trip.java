@@ -1,24 +1,23 @@
-package ru.rsreu.nis.data;
+package ru.rsreu.nis.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.rsreu.nis.myenums.TripStatus;
+import ru.rsreu.nis.enums.TripStatus;
 
 import java.math.BigDecimal;
 import java.sql.Date;
-import java.sql.Timestamp;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Trip {
-    private int tripId;
-    private String startPoint;
-    private String finalPoint;
+    private Long tripId;
+    private String startPoLong;
+    private String finalPoLong;
     private Date tripDate;
-    private int freeSeats;
+    private Long freeSeats;
     private BigDecimal price;
-    private int driverId;
+    private Long driverId;
     private TripStatus tripStatus;
 }

@@ -3,18 +3,16 @@ package ru.rsreu.nis.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
-import ru.rsreu.nis.enums.Status;
+import ru.rsreu.nis.enums.UserStatus;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Accessors(chain = true)
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
-    private Long id;
+    private Long userId;
     private String login;
     private String password;
+    private UserStatus userStatus;
     private String firstName;
     private String lastName;
-    private Status userStatus;
 }

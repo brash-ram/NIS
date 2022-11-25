@@ -1,4 +1,4 @@
-package ru.rsreu.nis.data;
+package ru.rsreu.nis.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Role {
-    private int userId;
+    private Long userId;
     private String userRole;
 }

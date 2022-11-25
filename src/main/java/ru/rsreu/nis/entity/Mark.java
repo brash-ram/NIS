@@ -1,4 +1,4 @@
-package ru.rsreu.nis.data;
+package ru.rsreu.nis.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Mark {
-    private int markId;
-    private int fromUser;
-    private int toUser;
-    private int mark;
+    private Long markId;
+    private Long fromUser;
+    private Long toUser;
+    private Long mark;
 }

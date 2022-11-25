@@ -24,6 +24,8 @@ public class LoginCommand extends FrontCommand {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
         request.setAttribute("mainContent", "");
+        request.setAttribute("firstName", "firstName");
+        request.setAttribute("lastName", "lastName");
         forward("mainContainer");
     }
 }

@@ -1,16 +1,16 @@
-package ru.rsreu.nis.data;
+package ru.rsreu.nis.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.rsreu.nis.myenums.RequestStatus;
+import ru.rsreu.nis.enums.RequestStatus;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Request {
-    private int requestId;
-    private int passengerId;
-    private int tripId;
+    private Long requestId;
+    private Long passengerId;
+    private Long tripId;
     private RequestStatus requestStatus;
 }

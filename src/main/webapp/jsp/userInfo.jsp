@@ -13,9 +13,9 @@
 <body>
 <div class="actionsContainer">
     <header>
-        <div class="logo-wrapper">
-            Пользователь
-        </div>
+<%--        <div class="logo-wrapper">--%>
+<%--            Пользователь--%>
+<%--        </div>--%>
     </header>
     <main class="container-fluid">
         <div class="form-wrapper">

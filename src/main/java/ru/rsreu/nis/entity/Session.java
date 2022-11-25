@@ -1,4 +1,4 @@
-package ru.rsreu.nis.data;
+package ru.rsreu.nis.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,8 +10,8 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Session {
-    private int session_id;
-    private int userId;
+    private Long session_id;
+    private Long userId;
     private Date activeUntil;
     private String token;
 }
