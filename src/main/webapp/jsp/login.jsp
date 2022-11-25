@@ -19,7 +19,7 @@
   <div class="page">
     <header>
       <div class="logo-wrapper">
-        NIS (Network Information System)
+        Сетевая информационная система "Попутчики"
       </div>
     </header>
     <main class="container-fluid">
