@@ -11,6 +11,21 @@
     <title>Title</title>
 </head>
 <body>
-
+<div class="actionsContainer">
+    <header>
+        <div class="logo-wrapper">
+            Пользователь
+        </div>
+    </header>
+    <main class="container-fluid">
+        <div class="form-wrapper">
+            <ul>
+                <li>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <footer></footer>
+</div>
 </body>
 </html>

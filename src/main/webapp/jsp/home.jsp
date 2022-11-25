@@ -28,7 +28,12 @@
             <div class="form-wrapper">
                 <form action="login" class="login-form" method="get">
                     <div class="form-group">
-                        <button class="btn submit-btn" >Авторизоваться</button>
+                        <button class="btn submit-btn" >Авторизация</button>
+                    </div>
+                </form>
+                <form action="registration" class="login-form" method="get">
+                    <div class="form-group">
+                        <button class="btn submit-btn" >Регистрация</button>
                     </div>
                 </form>
             </div>
