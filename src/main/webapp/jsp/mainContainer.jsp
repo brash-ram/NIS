@@ -19,7 +19,7 @@
 
 
 <div class="mainContainer">
-        <jsp:include page="${mainContent}" />
+        <jsp:include page="${mainContent}" >
 <%--        <jsp:include page="userInfo.jsp" />--%>
     </div>
 

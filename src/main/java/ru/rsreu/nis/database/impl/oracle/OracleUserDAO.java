@@ -12,6 +12,11 @@ public class OracleUserDAO implements UserDAO {
     }
 
     @Override
+    public User getUserByLoginAndPassword(String login, String password) {
+        return null;
+    }
+
+    @Override
     public User getUserById(Long id) {
         return null;
     }
