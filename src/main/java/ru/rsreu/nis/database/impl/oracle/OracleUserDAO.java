@@ -1,8 +1,14 @@
 package ru.rsreu.nis.database.impl.oracle;
 
+import ru.rsreu.nis.database.ConnectionPool;
 import ru.rsreu.nis.database.dao.UserDAO;
 import ru.rsreu.nis.entity.User;
+import ru.rsreu.nis.resourcer.ProjectResourcer;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 public class OracleUserDAO implements UserDAO {
@@ -13,6 +19,17 @@ public class OracleUserDAO implements UserDAO {
 
     @Override
     public User getUserByLoginAndPassword(String login, String password) {
+        try (Connection connection = ConnectionPool.getConnection()) {
+            PreparedStatement ps = connection.prepareStatement(ProjectResourcer.getInstance().getString("user.auth"));
+            ps.setString(1, login);
+            ps.setString(2, password);
+
+            ResultSet rs = ps.executeQuery();
+            return new User(rs);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 

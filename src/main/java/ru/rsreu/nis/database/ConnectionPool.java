@@ -10,12 +10,14 @@ import java.sql.SQLException;
 public class ConnectionPool {
     private static final String DATASOURCE_NAME = "java:/comp/env/jdbc/office";
     private static DataSource dataSource;
+    private static Connection connection;
 
     static {
         try {
             Context initContext = new InitialContext();
             dataSource = (DataSource) initContext.lookup(DATASOURCE_NAME);
-        } catch (NamingException e) {
+            connection = dataSource.getConnection();
+        } catch (NamingException | SQLException e) {
             e.printStackTrace();
         }
     }
@@ -23,8 +25,8 @@ public class ConnectionPool {
     private ConnectionPool() {
     }
 
-    public static Connection getConnection() throws SQLException {
-        return dataSource.getConnection();
+    public static Connection getConnection() {
+        return connection;
     }
 }
 
