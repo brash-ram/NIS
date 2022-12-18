@@ -1,4 +1,4 @@
-package ru.rsreu.nis.resourcer;
+package resourcer;
 
 public interface Resourcer {
 	String getString(String resourceKey);

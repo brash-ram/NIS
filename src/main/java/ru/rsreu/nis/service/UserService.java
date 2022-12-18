@@ -3,26 +3,19 @@ package ru.rsreu.nis.service;
 import ru.rsreu.nis.database.DatabaseType;
 import ru.rsreu.nis.database.dao.DAOFactory;
 import ru.rsreu.nis.database.dao.UserDAO;
-import ru.rsreu.nis.database.impl.oracle.OracleDAOFactory;
 import ru.rsreu.nis.entity.User;
+import ru.rsreu.nis.entity.enums.UserStatus;
 
 public class UserService {
-    private static UserService instance;
     private UserDAO userDAO;
 
-    public static UserService getInstance() {
-        if (instance == null) {
-            synchronized (UserService.class) {
-                instance = new UserService();
-            }
-        }
-        return instance;
-    }
     public UserService() {
-        userDAO = OracleDAOFactory.getInstance().getUserDAO();
+        DAOFactory daoFactory = DAOFactory.getInstance(DatabaseType.ORACLE);
     }
 
+
     public User authorization(String login, String password) {
-        return userDAO.getUserByLoginAndPassword(login, password);
+        return new User(1L, "login", "pass",
+                UserStatus.NOT_BLOCKED, "Александр", "Пруцков");
     }
 }

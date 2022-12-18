@@ -1,10 +1,9 @@
 package ru.rsreu.nis.database.impl.oracle;
 
+import resourcer.ProjectResourcer;
 import ru.rsreu.nis.database.ConnectionPool;
 import ru.rsreu.nis.database.dao.UserDAO;
 import ru.rsreu.nis.entity.User;
-import ru.rsreu.nis.resourcer.ProjectResourcer;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -62,4 +61,9 @@ public class OracleUserDAO implements UserDAO {
     public void addUser(User user) {
 
     }
+
+//    @Override
+//    public User getUserByLoginAndPassword(String login, String password) {
+//        return null;
+//    }
 }

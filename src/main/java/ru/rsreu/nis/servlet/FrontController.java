@@ -1,56 +1,51 @@
 package ru.rsreu.nis.servlet;
 
-import ru.rsreu.nis.utils.StringUtils;
-
+import ru.rsreu.nis.servlet.command.ActionCommand;
+import ru.rsreu.nis.servlet.command.factory.ActionFactory;
 import java.io.*;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
-import javax.servlet.annotation.*;
 
-//@WebServlet(name = "FrontControllerServlet")
+/**
+ * Servlet implementation class FrontController
+ */
+@WebServlet("/FrontController")
 public class FrontController extends HttpServlet {
+    private static final long serialVersionUID = 1L;
 
     /**
-     * @param req
-     * @param resp
-     * @throws ServletException
-     * @throws IOException
+     * @see HttpServlet#HttpServlet()
      */
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        FrontCommand command = getCommand(req);
-        command.init(getServletContext(), req, resp);
-        command.process();
+    public FrontController() {
+        super();
     }
 
     /**
-     * @param req
-     * @param resp
-     * @throws ServletException
-     * @throws IOException
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        FrontCommand command = getCommand(req);
-        command.init(getServletContext(), req, resp);
-        command.send();
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        processRequest(request, response);
     }
 
     /**
-     * @param request
-     * @return
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
-    private FrontCommand getCommand(HttpServletRequest request) {
-        try {
-            String str = String.format(
-                    "ru.rsreu.nis.servlet.command.%sCommand",
-                    StringUtils.capitalize(request.getPathInfo().substring(1)));
-            Class<?> type = Class.forName(str);
-            return type
-                    .asSubclass(FrontCommand.class)
-                    .newInstance();
-        } catch (Exception e) {
-            return null;
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String page = null;
+        ActionFactory client = new ActionFactory();
+        ActionCommand command = client.defineCommand(request);
+
+        page = command.execute(request);
+
+        if (page != null) {
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
+            dispatcher.forward(request, response);
         }
     }
 }

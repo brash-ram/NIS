@@ -1,4 +1,4 @@
-package ru.rsreu.nis.servlet;
+package ru.rsreu.nis.servlet.command;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;

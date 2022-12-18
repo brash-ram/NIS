@@ -1,40 +1,35 @@
 package ru.rsreu.nis.servlet.command;
 
-import ru.rsreu.nis.entity.User;
-import ru.rsreu.nis.service.UserService;
-import ru.rsreu.nis.servlet.FrontCommand;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
+import ru.rsreu.nis.logic.LoginLogic;
+import ru.rsreu.nis.servlet.resource.ConfigurationManager;
+import ru.rsreu.nis.servlet.resource.MessageManager;
+
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
-public class LoginCommand extends FrontCommand {
+public class LoginCommand implements ActionCommand {
 
-    private UserService userService;
-    @Override
-    public void init(ServletContext servletContext, HttpServletRequest servletRequest, HttpServletResponse servletResponse) {
-        super.init(servletContext, servletRequest, servletResponse);
-        userService = UserService.getInstance();
-    }
+    private static final String PARAM_NAME_LOGIN = "login";
+    private static final String PARAM_NAME_PASSWORD = "password";
 
     @Override
-    public void process() throws ServletException, IOException {
-        forward("login");
-    }
+    public String execute(HttpServletRequest request) {
+        String page = null;
+        String login = request.getParameter(PARAM_NAME_LOGIN);
+        String password = request.getParameter(PARAM_NAME_PASSWORD);
 
-    @Override
-    public void send() throws ServletException, IOException {
-        String login = request.getParameter("login");
-        String password = request.getParameter("password");
-        User user = userService.authorization(login, password);
-        if (user != null) {
-            request.setAttribute("mainContent", "");
-            request.setAttribute("firstName", user.getFirstName());
-            request.setAttribute("lastName", user.getLastName());
-            forward("mainContainer");
+        if (LoginLogic.checkLogin(login, password)) {
+            request.setAttribute("login", login);
+            if ("driver".equals(login)) {
+                page = ConfigurationManager.getProperty("path.page.driverProfile");
+            } else if ("passenger".equals(login)) {
+                page = ConfigurationManager.getProperty("path.page.passengerProfile");
+            }
+        } else {
+            request.setAttribute("errorLoginPassMessage", MessageManager.getProperty("message.loginerror"));
+            page = ConfigurationManager.getProperty("path.page.login");
         }
-
+        return page;
     }
+
 }

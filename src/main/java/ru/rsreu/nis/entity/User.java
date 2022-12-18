@@ -3,7 +3,7 @@ package ru.rsreu.nis.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.rsreu.nis.enums.UserStatus;
+import ru.rsreu.nis.entity.enums.UserStatus;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
