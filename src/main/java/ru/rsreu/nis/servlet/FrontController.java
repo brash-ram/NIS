@@ -40,7 +40,6 @@ public class FrontController extends HttpServlet {
         String page = null;
         ActionFactory client = new ActionFactory();
         ActionCommand command = client.defineCommand(request);
-
         page = command.execute(request);
 
         if (page != null) {

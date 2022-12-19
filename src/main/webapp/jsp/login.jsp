@@ -16,6 +16,8 @@
           <input type="hidden" name="command" value="login"/>
           <input type="text" name="login" placeholder="Введите логин">
           <input type="password" name="password" placeholder="Введите пароль">
+          <br/>${errorLoginpassMessage}<br/>
+          <br/>${wrongAction}<br/>
         </div>
         <input class="submit" type="submit" name="submit" value="ВОЙТИ"><br />
       </form>

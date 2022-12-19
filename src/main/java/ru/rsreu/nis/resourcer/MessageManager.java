@@ -1,4 +1,4 @@
-package ru.rsreu.nis.servlet.resource;
+package ru.rsreu.nis.resourcer;
 
 import java.util.ResourceBundle;
 
