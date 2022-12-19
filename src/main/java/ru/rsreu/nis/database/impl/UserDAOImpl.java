@@ -1,5 +1,6 @@
-package ru.rsreu.nis.database.impl.oracle;
+package ru.rsreu.nis.database.impl;
 
+import ru.rsreu.nis.mapper.DAOMapper;
 import ru.rsreu.nis.resourcer.ProjectResourcer;
 import ru.rsreu.nis.database.ConnectionPool;
 import ru.rsreu.nis.database.dao.UserDAO;
@@ -10,7 +11,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class OracleUserDAO implements UserDAO {
+public class UserDAOImpl implements UserDAO {
+
+    private static UserDAOImpl instance;
     @Override
     public List<User> findAll() {
         return null;
@@ -24,7 +27,7 @@ public class OracleUserDAO implements UserDAO {
             ps.setString(2, password);
 
             ResultSet rs = ps.executeQuery();
-            return new User(rs);
+            return DAOMapper.mapUser(rs);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -62,8 +65,13 @@ public class OracleUserDAO implements UserDAO {
 
     }
 
-//    @Override
-//    public User getUserByLoginAndPassword(String login, String password) {
-//        return null;
-//    }
+    public static UserDAOImpl getInstance() {
+        synchronized (UserDAOImpl.class) {
+            if (instance == null) {
+                instance = new UserDAOImpl();
+            }
+        }
+        return instance;
+    }
+
 }

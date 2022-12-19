@@ -1,11 +1,11 @@
-package ru.rsreu.nis.database.impl.oracle;
+package ru.rsreu.nis.database.impl;
 
 import ru.rsreu.nis.database.dao.TripDAO;
 import ru.rsreu.nis.entity.Trip;
 
 import java.util.List;
 
-public class OracleTripDAO implements TripDAO {
+public class TripDAOImpl implements TripDAO {
     @Override
     public List<Trip> findAll() {
         return null;

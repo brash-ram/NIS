@@ -1,11 +1,11 @@
-package ru.rsreu.nis.database.impl.oracle;
+package ru.rsreu.nis.database.impl;
 
 import ru.rsreu.nis.database.dao.MarkDAO;
 import ru.rsreu.nis.entity.Mark;
 
 import java.util.List;
 
-public class OracleMarkDAO implements MarkDAO {
+public class MarkDAOImpl implements MarkDAO {
     @Override
     public List<Mark> findAll() {
         return null;

@@ -1,4 +1,6 @@
-package ru.rsreu.nis.servlet.command;
+package ru.rsreu.nis.servlet;
+
+import ru.rsreu.nis.enums.Jsp;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -28,13 +30,8 @@ public abstract class FrontCommand {
     public void send() throws ServletException, IOException {
     }
 
-    protected void forward(String target) throws ServletException, IOException {
-        target = String.format("/jsp/%s.jsp", target);
-        RequestDispatcher dispatcher = context.getRequestDispatcher(target);
+    protected void forward(Jsp page) throws ServletException, IOException {
+        RequestDispatcher dispatcher = context.getRequestDispatcher(page.getRoute());
         dispatcher.forward(request, response);
-    }
-
-    protected void redirect(String url) throws IOException {
-        response.sendRedirect(url);
     }
 }

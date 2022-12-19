@@ -1,11 +1,11 @@
-package ru.rsreu.nis.database.impl.oracle;
+package ru.rsreu.nis.database.impl;
 
 import ru.rsreu.nis.database.dao.RoleDAO;
 import ru.rsreu.nis.entity.Role;
 
 import java.util.List;
 
-public class OracleRoleDAO implements RoleDAO {
+public class RoleDAOImpl implements RoleDAO {
     @Override
     public List<Role> findAll() {
         return null;

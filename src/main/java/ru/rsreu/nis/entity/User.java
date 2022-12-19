@@ -3,28 +3,35 @@ package ru.rsreu.nis.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.rsreu.nis.entity.enums.Roles;
 import ru.rsreu.nis.entity.enums.UserStatus;
 
+import javax.security.auth.Subject;
+import java.security.Principal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class User  implements Principal {
     private Long userId;
     private String login;
     private String password;
     private UserStatus userStatus;
     private String firstName;
     private String lastName;
+    private Roles userRole;
 
-    public User(ResultSet rs) throws SQLException {
-        userId = rs.getLong("userId");
-        login = rs.getString("login");
-        password = rs.getString("password");
-        userStatus = UserStatus.valueOf(rs.getString("userStatus"));
-        firstName = rs.getString("firstName");
-        lastName = rs.getString("lastName");
+
+    @Override
+    public String getName() {
+        return login;
+    }
+
+    @Override
+    public boolean implies(Subject subject) {
+        return Principal.super.implies(subject);
     }
 }
