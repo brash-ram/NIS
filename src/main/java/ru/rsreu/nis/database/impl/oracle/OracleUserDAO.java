@@ -1,6 +1,6 @@
 package ru.rsreu.nis.database.impl.oracle;
 
-import resourcer.ProjectResourcer;
+import ru.rsreu.nis.resourcer.ProjectResourcer;
 import ru.rsreu.nis.database.ConnectionPool;
 import ru.rsreu.nis.database.dao.UserDAO;
 import ru.rsreu.nis.entity.User;

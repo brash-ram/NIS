@@ -2,6 +2,7 @@ package ru.rsreu.nis.servlet.command;
 
 
 import ru.rsreu.nis.logic.LoginLogic;
+import ru.rsreu.nis.resourcer.ProjectResourcer;
 import ru.rsreu.nis.servlet.resource.ConfigurationManager;
 import ru.rsreu.nis.servlet.resource.MessageManager;
 
@@ -17,6 +18,7 @@ public class LoginCommand implements ActionCommand {
         String page = null;
         String login = request.getParameter(PARAM_NAME_LOGIN);
         String password = request.getParameter(PARAM_NAME_PASSWORD);
+        page = ProjectResourcer.getInstance().getString("path.page.index");
 
         if (LoginLogic.checkLogin(login, password)) {
             request.setAttribute("login", login);

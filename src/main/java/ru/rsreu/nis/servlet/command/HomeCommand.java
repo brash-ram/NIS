@@ -1,6 +1,6 @@
 package ru.rsreu.nis.servlet.command;
 
-import resourcer.ProjectResourcer;
+import ru.rsreu.nis.resourcer.ProjectResourcer;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
