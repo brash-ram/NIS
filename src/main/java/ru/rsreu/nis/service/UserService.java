@@ -24,4 +24,8 @@ public class UserService {
     public User findByLogin(String login) {
         return userDAO.getUserByLogin(login);
     }
+
+    public User getUser() {
+        return userDAO.getUserById(4L);
+    }
 }

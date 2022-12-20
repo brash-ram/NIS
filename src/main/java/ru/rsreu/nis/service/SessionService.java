@@ -44,4 +44,8 @@ public class SessionService {
 
         return user;
     }
+
+    public User getUser() {
+        return userService.getUser();
+    }
 }

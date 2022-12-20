@@ -5,6 +5,7 @@ import ru.rsreu.nis.constant.RequestParam;
 import ru.rsreu.nis.entity.Role;
 import ru.rsreu.nis.entity.User;
 import ru.rsreu.nis.entity.enums.Roles;
+import ru.rsreu.nis.enums.Jsp;
 import ru.rsreu.nis.enums.Route;
 import ru.rsreu.nis.logic.LoginLogic;
 import ru.rsreu.nis.resourcer.ProjectResourcer;
@@ -54,7 +55,7 @@ public class LoginCommand extends FrontCommand {
 
     @Override
     public void process() throws ServletException, IOException {
-        super.process();
+        forward(Jsp.LOGIN);
     }
 
     @Override
