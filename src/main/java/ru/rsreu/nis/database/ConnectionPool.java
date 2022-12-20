@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class ConnectionPool {
-    private static final String DATASOURCE_NAME = "java:/comp/env/jdbc/username";
+    private static final String DATASOURCE_NAME = "java:/comp/env/jdbc/office";
     private static DataSource dataSource;
     private static Connection connection;
 

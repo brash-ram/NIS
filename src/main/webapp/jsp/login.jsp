@@ -11,7 +11,7 @@
     </div>
     <div class="container">
       <img src="https://dwstroy.ru/lessons/les3373/demo/img/men.png">
-      <form name = "LoginForm" method="POST" action = "login">
+      <form name = "LoginForm" method="POST" action = "FrontController">
         <div class="input">
           <input type="hidden" name="command" value="login"/>
           <input type="text" name="login" placeholder="Введите логин">

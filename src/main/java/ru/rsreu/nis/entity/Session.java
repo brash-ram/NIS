@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Date;
 
 @Data
@@ -13,11 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class Session {
     private Long session_id;
-    private User user;
+    private Long userId;
     private Date activeUntil;
-
-    public Session(User user, Date activeUntil) {
-        this.user = user;
-        this.activeUntil = activeUntil;
-    }
+    private String token;
 }

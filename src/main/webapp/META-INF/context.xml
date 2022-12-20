@@ -2,9 +2,9 @@
 <Context>
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
 
-    <Resource name="jdbc/username"
+    <Resource name="jdbc/sys"
               auth="Container"
-              username="username"
+              username="system"
               password="qwerty"
               type="javax.sql.DataSource"
               driverClassName="oracle.jdbc.driver.OracleDriver"

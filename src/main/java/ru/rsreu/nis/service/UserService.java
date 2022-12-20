@@ -1,31 +1,21 @@
 package ru.rsreu.nis.service;
 
-import lombok.RequiredArgsConstructor;
-import ru.rsreu.nis.database.DAOFactory;
+import ru.rsreu.nis.database.DatabaseType;
+import ru.rsreu.nis.database.dao.DAOFactory;
 import ru.rsreu.nis.database.dao.UserDAO;
-import ru.rsreu.nis.database.impl.SessionDAOImpl;
 import ru.rsreu.nis.entity.User;
 import ru.rsreu.nis.entity.enums.UserStatus;
 
-@RequiredArgsConstructor
 public class UserService {
-    private static UserService instance;
-    private final UserDAO userDAO;
+    private UserDAO userDAO;
 
-    public static UserService getInstance() {
-        synchronized (UserService.class) {
-            if (instance == null) {
-                instance = new UserService(DAOFactory.getUserDAO());
-            }
-        }
-        return instance;
+    public UserService() {
+        DAOFactory daoFactory = DAOFactory.getInstance(DatabaseType.ORACLE);
     }
 
-    public User findByLogin(String login) {
-        return userDAO.getUserByLogin(login);
-    }
 
-    public User getUser() {
-        return userDAO.getUserById(4L);
+    public User authorization(String login, String password) {
+        return new User(1L, "login", "pass",
+                UserStatus.NOT_BLOCKED, "Александр", "Пруцков");
     }
 }
