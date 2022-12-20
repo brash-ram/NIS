@@ -3,15 +3,14 @@ package ru.rsreu.nis.database.dao;
 import ru.rsreu.nis.entity.User;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UserDAO {
 
     List<User> findAll();
-    User getUserById(Long id);
-    User getUserById(String id);
-    User getUserByLogin(String login);
-    void updateUser(User user);
+    User findUserById(Integer id);
+    User findUserByLogin(String login);
+    Optional<User> updateUser(User user);
     void deleteUser(User user);
-    void addUser(User user);
-    User getUserByLoginAndPassword(String login, String password);
+    Optional<User> save(User user);
 }

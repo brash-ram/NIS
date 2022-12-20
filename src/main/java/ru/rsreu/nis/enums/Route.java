@@ -3,7 +3,7 @@ package ru.rsreu.nis.enums;
 public enum Route {
     LOGIN("/login"),
     USERS("/users"),
-    MY_TRIPS("/my-trips"),
+    DRIVER_PROFILE("/driverProfile"),
     MY_REQUESTS("/my_requests"),
     NOT_FOUND("404");
 

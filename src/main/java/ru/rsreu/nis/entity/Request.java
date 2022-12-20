@@ -9,8 +9,8 @@ import ru.rsreu.nis.entity.enums.RequestStatus;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Request {
-    private Long requestId;
-    private Long passengerId;
-    private Long tripId;
+    private Integer requestId;
+    private Integer passengerId;
+    private Integer tripId;
     private RequestStatus requestStatus;
 }

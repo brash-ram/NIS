@@ -13,5 +13,5 @@ public interface SessionDAO {
 
     void deleteSession(User user);
 
-    Optional<Session> getSession(Long userId);
+    Optional<Session> getSession(Integer userId);
 }

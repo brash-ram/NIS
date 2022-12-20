@@ -14,7 +14,7 @@ public class AuthConfig {
             Map.entry(Roles.PASSENGER, List.of(
                     Route.LOGIN
             )),
-            Map.entry(Roles.ADMIN, List.of(
+            Map.entry(Roles.ADMINISTRATOR, List.of(
 
             )),
             Map.entry(Roles.MODERATOR, List.of(
@@ -23,10 +23,10 @@ public class AuthConfig {
     );
 
     private static final Map<Roles, Route> RolesStartPage = Map.ofEntries(
-            Map.entry(Roles.DRIVER, Route.MY_TRIPS),
+            Map.entry(Roles.DRIVER, Route.DRIVER_PROFILE),
             Map.entry(Roles.PASSENGER, Route.MY_REQUESTS),
             Map.entry(Roles.MODERATOR, Route.USERS),
-            Map.entry(Roles.ADMIN, Route.USERS)
+            Map.entry(Roles.ADMINISTRATOR, Route.USERS)
     );
 
     public static List<Route> getRoutes(Roles Roles) {

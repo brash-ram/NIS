@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface MarkDAO {
     List<Mark> findAll();
-    Mark getMarkById(Long id);
+    Mark getMarkById(Integer id);
     Mark getMarkById(String id);
     void updateMark(Mark mark);
     void deleteMark(Mark mark);

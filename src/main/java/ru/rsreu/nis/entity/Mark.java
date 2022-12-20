@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Mark {
-    private Long markId;
-    private Long fromUser;
-    private Long toUser;
-    private Long mark;
+    private Integer markId;
+    private Integer fromUser;
+    private Integer toUser;
+    private Integer mark;
 }

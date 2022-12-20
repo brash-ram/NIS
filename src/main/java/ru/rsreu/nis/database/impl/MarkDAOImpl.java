@@ -12,7 +12,7 @@ public class MarkDAOImpl implements MarkDAO {
     }
 
     @Override
-    public Mark getMarkById(Long id) {
+    public Mark getMarkById(Integer id) {
         return null;
     }
 

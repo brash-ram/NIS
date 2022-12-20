@@ -12,7 +12,7 @@ public class DAOMapper {
 
     public static User mapUser(ResultSet rs) throws SQLException {
         return new User(
-                rs.getLong("user_id"),
+                rs.getInt("user_id"),
                 rs.getString("login"),
                 rs.getString("password"),
                 UserStatus.valueOf(rs.getString("user_status")),
@@ -24,7 +24,7 @@ public class DAOMapper {
 
     public static Session mapSession(ResultSet rs) throws SQLException {
         return new Session(
-                rs.getLong("session_id"),
+                rs.getInt("session_id"),
                 DAOMapper.mapUser(rs),
                 rs.getTimestamp("activeUntil")
         );

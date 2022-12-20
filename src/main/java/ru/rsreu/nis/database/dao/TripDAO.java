@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface TripDAO {
     List<Trip> findAll();
-    Trip getTripById(Long id);
+    Trip getTripById(Integer id);
     Trip getTripById(String id);
     void updateDevice(Trip trip);
     void deleteDevice(Trip trip);

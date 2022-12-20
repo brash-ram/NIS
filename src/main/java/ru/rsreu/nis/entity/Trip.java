@@ -12,12 +12,12 @@ import java.sql.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Trip {
-    private Long tripId;
+    private Integer tripId;
     private String startPoLong;
     private String finalPoLong;
     private Date tripDate;
-    private Long freeSeats;
+    private Integer freeSeats;
     private BigDecimal price;
-    private Long driverId;
+    private Integer driverId;
     private TripStatus tripStatus;
 }

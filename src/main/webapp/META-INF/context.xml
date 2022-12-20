@@ -2,13 +2,13 @@
 <Context>
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
 
-    <Resource name="jdbc/sys"
+    <Resource name="jdbc/username"
               auth="Container"
-              username="system"
+              username="username"
               password="qwerty"
               type="javax.sql.DataSource"
               driverClassName="oracle.jdbc.driver.OracleDriver"
-              url="jdbc:oracle:thin:@localhost:1521:XE"
+              url="jdbc:oracle:thin:@localhost:1521/XE"
               maxActive="10"
               maxIdle="4"/>
 </Context>

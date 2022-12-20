@@ -12,7 +12,7 @@ public class TripDAOImpl implements TripDAO {
     }
 
     @Override
-    public Trip getTripById(Long id) {
+    public Trip getTripById(Integer id) {
         return null;
     }
 

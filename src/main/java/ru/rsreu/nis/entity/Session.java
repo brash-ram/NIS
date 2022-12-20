@@ -10,8 +10,12 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Session {
-    private Long session_id;
-    private Long userId;
+    private Integer session_id;
+    private User user;
     private Date activeUntil;
-    private String token;
+
+    public Session(User user, Date activeUntil) {
+        this.user = user;
+        this.activeUntil = activeUntil;
+    }
 }

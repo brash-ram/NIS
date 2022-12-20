@@ -74,7 +74,7 @@ public class SessionDAOImpl extends AbstractDAO implements SessionDAO {
     }
 
     @Override
-    public Optional<Session> getSession(Long userId) {
+    public Optional<Session> getSession(Integer userId) {
         String query = resourcer.getString("session.find.by.id");
 
         try (PreparedStatement st = connection.prepareStatement(query)) {

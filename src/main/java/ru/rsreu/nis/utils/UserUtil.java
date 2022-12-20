@@ -27,7 +27,7 @@ public class UserUtil {
         return cookie;
     }
 
-    public static Optional<Long> getUserIdFromCookies(Cookie[] cookies) {
+    public static Optional<Integer> getUserIdFromCookies(Cookie[] cookies) {
         if (cookies == null) {
             return Optional.empty();
         }
@@ -38,7 +38,7 @@ public class UserUtil {
 
                 return value == null
                     ? Optional.empty()
-                    : Optional.of(Long.parseLong(value));
+                    : Optional.of(Integer.parseInt(value));
             }
         }
 
