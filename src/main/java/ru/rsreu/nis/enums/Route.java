@@ -4,6 +4,8 @@ public enum Route {
     LOGIN("/login"),
     USERS("/users"),
     DRIVER_PROFILE("/driverProfile"),
+    PASSENGER_PROFILE("/passengerProfile"),
+    CREATE_TRIP("/createTrip"),
     MY_REQUESTS("/my_requests"),
     NOT_FOUND("404");
 

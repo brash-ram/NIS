@@ -19,7 +19,7 @@
           <br/>${errorLoginpassMessage}<br/>
           <br/>${wrongAction}<br/>
         </div>
-        <input class="submit" type="submit" name="submit" value="ВОЙТИ"><br />
+        <input class="submit" type="submit" name="submit" value="ВОЙТИ">
       </form>
     </div>
   </body>

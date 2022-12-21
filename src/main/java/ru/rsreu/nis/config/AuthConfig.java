@@ -24,7 +24,7 @@ public class AuthConfig {
 
     private static final Map<Roles, Route> RolesStartPage = Map.ofEntries(
             Map.entry(Roles.DRIVER, Route.DRIVER_PROFILE),
-            Map.entry(Roles.PASSENGER, Route.MY_REQUESTS),
+            Map.entry(Roles.PASSENGER, Route.PASSENGER_PROFILE),
             Map.entry(Roles.MODERATOR, Route.USERS),
             Map.entry(Roles.ADMINISTRATOR, Route.USERS)
     );

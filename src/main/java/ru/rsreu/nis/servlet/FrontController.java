@@ -10,6 +10,7 @@ import javax.servlet.http.*;
 /**
  * Servlet implementation class FrontController
  */
+//@WebServlet("/FrontControllerServlet")
 public class FrontController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

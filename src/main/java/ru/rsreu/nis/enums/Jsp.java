@@ -3,6 +3,7 @@ package ru.rsreu.nis.enums;
 public enum Jsp {
     LOGIN("/jsp/login.jsp"),
     DRIVER_PROFILE("/jsp/driverProfile.jsp"),
+    PASSENGER_PROFILE("/jsp/passengerProfile.jsp"),
     CREATE_TRIP("/jsp/createTrip.jsp"),
     NOT_FOUND("/pages/404.jsp"),
 
