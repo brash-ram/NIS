@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>CreateTrip</title>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.5/dist/flowbite.min.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 
 <%--    <style>--%>
@@ -10,7 +11,7 @@
 <%--    </style>--%>
 </head>
 <body>
-<%@include file="driverProfile.jsp" %>
+<%--<%@include file="driverProfile.jsp" %>--%>
 <div class="createTrip">
     <div class="trip-container">
         <div class="createTrip-inner">
@@ -36,7 +37,7 @@
                     <div class="createTrip-price-title">Цена поездки</div>
                     <input type="text" id="price" class="createTrip-price-input">
                 </div>
-                <input class="tripSubmit" type="submit" name="submit" value="Создать поездку">
+                <button class="tripSubmit" type="submit" name="submit">Создать поездку</button>
             </form>
         </div>
     </div>
