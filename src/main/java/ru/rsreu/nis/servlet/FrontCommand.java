@@ -24,7 +24,6 @@ public abstract class FrontCommand {
     }
 
     public void process() throws ServletException, IOException {
-
     }
 
     public void send() throws ServletException, IOException {

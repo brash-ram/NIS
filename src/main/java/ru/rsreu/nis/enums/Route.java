@@ -6,6 +6,13 @@ public enum Route {
     DRIVER_PROFILE("/driverProfile"),
     PASSENGER_PROFILE("/passengerProfile"),
     CREATE_TRIP("/createTrip"),
+    APPROVE_PASSENGER("/approvePassenger"),
+    RATE_PASSENGER("/ratePassenger"),
+    TRIP_PARAMETERS("/tripParameters"),
+    TRIP_REQUESTS("/tripRequests"),
+    TRIPS_INFO("/tripsInfo"),
+    PASSENGERS_MARKS("/passengersMarks"),
+    LOGOUT("/login"),
     MY_REQUESTS("/my_requests"),
     NOT_FOUND("404");
 

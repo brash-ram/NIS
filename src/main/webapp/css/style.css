@@ -9,7 +9,7 @@ body{
     font-size: 30px;
 }
 
-.container, .trip-container{
+.container, .trip-container, .ratePassenger-container{
     width:450px;
     background-color: #eaf0fb;
     margin: 55px auto auto auto;
@@ -36,7 +36,7 @@ input[type="text"],input[type="password"]{
 .input input:hover{
     box-shadow: 0 0 6px 3px rgba(58, 219, 253, 0.35);
 }
-.submit, .tripSubmit {
+.submit, .tripSubmit, .rateSubmit {
     padding: 13px 30px;
     margin: 5px 0 20px 0;
     font-size: 15px;
@@ -56,7 +56,7 @@ input[type="text"],input[type="password"]{
     transition: all 0.3s;
 }
 
-.createTrip-inner{
+.createTrip-inner, .ratePassenger-inner{
     padding-top: 20px;
     display: flex;
     flex-direction: column;

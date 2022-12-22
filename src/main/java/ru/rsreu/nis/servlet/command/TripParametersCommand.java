@@ -6,10 +6,14 @@ import ru.rsreu.nis.servlet.FrontCommand;
 import javax.servlet.ServletException;
 import java.io.IOException;
 
-public class CreateTripCommand extends FrontCommand {
+public class TripParametersCommand extends FrontCommand {
     @Override
     public void process() throws ServletException, IOException {
-        forward(Jsp.CREATE_TRIP);
+        forward(Jsp.TRIP_PARAMETERS);
     }
 
+    @Override
+    public void send() throws ServletException, IOException {
+        super.send();
+    }
 }

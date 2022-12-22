@@ -5,13 +5,11 @@
     <title>CreateTrip</title>
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.5/dist/flowbite.min.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
-
-<%--    <style>--%>
-<%--        <%@include file="../css/style.css" %>--%>
-<%--    </style>--%>
+    <style>
+        <%@include file="../css/style.css" %>
+    </style>
 </head>
 <body>
-<%--<%@include file="driverProfile.jsp" %>--%>
 <div class="createTrip">
     <div class="trip-container">
         <div class="createTrip-inner">

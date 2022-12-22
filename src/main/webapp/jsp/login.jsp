@@ -6,9 +6,6 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
   </head>
   <body>
-    <div class="title">
-      Сетевая информационная система "Попутчики"
-    </div>
     <div class="container">
       <img src="https://dwstroy.ru/lessons/les3373/demo/img/men.png">
       <form name = "LoginForm" method="POST" action = "login">
