@@ -2,19 +2,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CreateTrip</title>
+    <title>Создание поездки</title>
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.5/dist/flowbite.min.css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <style>
-        <%@include file="../css/style.css" %>
+        <%@include file="../../css/style.css" %>
     </style>
 </head>
 <body>
 <div class="createTrip">
-    <div class="trip-container">
+    <div class="container">
         <div class="createTrip-inner">
             <form name = "CreateTripForm" method="POST" action = "createTrip">
-                <div class="createTrip-title title">Создание поездки</div>
+                <div class="createTrip-title title">Создание поездки</div><br>
                 <div class="createTrip-start-point">
                     <div class="createTrip-start-point-title">Начальная точка</div>
                     <input type="text" id="start-point" class="createTrip-start-point-input">
@@ -35,7 +34,7 @@
                     <div class="createTrip-price-title">Цена поездки</div>
                     <input type="text" id="price" class="createTrip-price-input">
                 </div>
-                <button class="tripSubmit" type="submit" name="submit">Создать поездку</button>
+                <button class="submit" type="submit" name="submit">Создать поездку</button>
             </form>
         </div>
     </div>

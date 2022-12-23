@@ -33,4 +33,8 @@ public abstract class FrontCommand {
         RequestDispatcher dispatcher = context.getRequestDispatcher(page.getRoute());
         dispatcher.forward(request, response);
     }
+
+    protected void redirect(String url) throws IOException {
+        response.sendRedirect(url);
+    }
 }

@@ -12,33 +12,44 @@ public class CommandConfig {
     private static final Map<Route, FrontCommand> commands = Map.ofEntries(
             Map.entry(Route.LOGIN, new LoginCommand()),
             Map.entry(Route.LOGOUT, new LogoutCommand()),
-            Map.entry(Route.NOT_FOUND, new EmptyCommand()),
+
             Map.entry(Route.DRIVER_PROFILE, new DriverProfileCommand()),
-            Map.entry(Route.PASSENGER_PROFILE, new PassengerProfileCommand()),
             Map.entry(Route.CREATE_TRIP, new CreateTripCommand()),
             Map.entry(Route.APPROVE_PASSENGER, new ApprovePassengerCommand()),
             Map.entry(Route.RATE_PASSENGER, new RatePassengerCommand()),
             Map.entry(Route.TRIP_PARAMETERS, new TripParametersCommand()),
-            Map.entry(Route.TRIP_REQUESTS, new TripRequestsCommand()),
+            Map.entry(Route.CERTAIN_TRIP_REQUESTS, new CertainTripRequestsCommand()),
             Map.entry(Route.TRIPS_INFO, new TripsInfoCommand()),
-            Map.entry(Route.PASSENGERS_MARKS, new PassengersMarksCommand())
+            Map.entry(Route.PASSENGERS_MARKS, new PassengersMarksCommand()),
+
+            Map.entry(Route.PASSENGER_PROFILE, new PassengerProfileCommand()),
+            Map.entry(Route.CREATE_REQUEST, new CreateRequestCommand()),
+            Map.entry(Route.DRIVER_MARKS, new DriverMarksCommand()),
+            Map.entry(Route.RATE_DRIVER, new RateDriverCommand()),
+            Map.entry(Route.TRIP_REQUESTS, new TripRequestsCommand()),
+
+            Map.entry(Route.NOT_FOUND, new EmptyCommand())
     );
 
     private static final List<Route> commandRoutes = Arrays.asList(
             Route.LOGIN,
             Route.LOGOUT,
+            Route.NOT_FOUND,
             Route.MY_REQUESTS,
             Route.DRIVER_PROFILE,
-            Route.PASSENGER_PROFILE,
             Route.USERS,
-            Route.NOT_FOUND,
             Route.CREATE_TRIP,
             Route.APPROVE_PASSENGER,
             Route.RATE_PASSENGER,
             Route.TRIP_PARAMETERS,
-            Route.TRIP_REQUESTS,
+            Route.CERTAIN_TRIP_REQUESTS,
             Route.TRIPS_INFO,
-            Route.PASSENGERS_MARKS
+            Route.PASSENGERS_MARKS,
+            Route.PASSENGER_PROFILE,
+            Route.CREATE_REQUEST,
+            Route.DRIVER_MARKS,
+            Route.RATE_DRIVER,
+            Route.TRIP_REQUESTS
     );
 
     public static FrontCommand getCommand(String path) {

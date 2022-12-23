@@ -11,9 +11,4 @@ public class TripRequestsCommand extends FrontCommand {
     public void process() throws ServletException, IOException {
         forward(Jsp.TRIP_REQUESTS);
     }
-
-    @Override
-    public void send() throws ServletException, IOException {
-        super.send();
-    }
 }
