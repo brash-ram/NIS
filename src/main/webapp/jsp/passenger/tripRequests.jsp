@@ -9,7 +9,6 @@
     </style>
 </head>
 <body>
-
 <div class="tripRequests">
     <div class="tripRequests-container">
         <div class="tripRequests-inner">

@@ -3,6 +3,7 @@ package ru.rsreu.nis.enums;
 public enum Route {
     LOGIN("/login"),
     USERS("/users"),
+    USER_INFO("/userInfo"),
     DRIVER_PROFILE("/driverProfile"),
     CREATE_TRIP("/createTrip"),
     APPROVE_PASSENGER("/approvePassenger"),

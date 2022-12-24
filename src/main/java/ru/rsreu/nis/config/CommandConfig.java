@@ -12,6 +12,7 @@ public class CommandConfig {
     private static final Map<Route, FrontCommand> commands = Map.ofEntries(
             Map.entry(Route.LOGIN, new LoginCommand()),
             Map.entry(Route.LOGOUT, new LogoutCommand()),
+            Map.entry(Route.USER_INFO, new UserInfoCommand()),
 
             Map.entry(Route.DRIVER_PROFILE, new DriverProfileCommand()),
             Map.entry(Route.CREATE_TRIP, new CreateTripCommand()),
@@ -38,6 +39,7 @@ public class CommandConfig {
     private static final List<Route> commandRoutes = Arrays.asList(
             Route.LOGIN,
             Route.LOGOUT,
+            Route.USER_INFO,
             Route.NOT_FOUND,
             Route.MY_REQUESTS,
             Route.DRIVER_PROFILE,
