@@ -1,4 +1,4 @@
-package ru.rsreu.nis.servlet.command.driver;
+package ru.rsreu.nis.servlet.command.passenger;
 
 import ru.rsreu.nis.enums.Jsp;
 import ru.rsreu.nis.servlet.FrontCommand;
@@ -6,9 +6,9 @@ import ru.rsreu.nis.servlet.FrontCommand;
 import javax.servlet.ServletException;
 import java.io.IOException;
 
-public class TripRequestsCommand extends FrontCommand {
+public class ActiveRequestsCommand extends FrontCommand {
     @Override
     public void process() throws ServletException, IOException {
-        forward(Jsp.TRIP_REQUESTS);
+        forward(Jsp.ACTIVE_REQUESTS);
     }
 }
