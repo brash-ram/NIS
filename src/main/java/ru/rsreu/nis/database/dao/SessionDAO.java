@@ -11,7 +11,7 @@ public interface SessionDAO {
 
     List<Session> findAll();
 
-    void deleteSession(User user);
+    void delete(User user);
 
-    Optional<Session> getSession(Integer userId);
+    Optional<Session> findByUserId(Integer userId);
 }

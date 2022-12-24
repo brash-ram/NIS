@@ -6,6 +6,7 @@ import ru.rsreu.nis.service.ServiceFactory;
 import ru.rsreu.nis.service.SessionService;
 import ru.rsreu.nis.utils.SessionUtil;
 import ru.rsreu.nis.utils.UserUtil;
+import ru.rsreu.nis.wrapper.UserRoleRequestWrapper;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -52,6 +53,8 @@ public class AuthFilter implements Filter {
             return;
         }
 
-        filterChain.doFilter(request, response);
+        HttpServletRequest wrapRequest = new UserRoleRequestWrapper(request, session.get().getUser());
+
+        filterChain.doFilter(wrapRequest, response);
     }
 }

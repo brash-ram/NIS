@@ -1,7 +1,7 @@
 package ru.rsreu.nis.entity.enums;
 
 public enum Roles {
-    ADMINISTRATOR,
+    ADMIN,
     MODERATOR,
     DRIVER,
     PASSENGER

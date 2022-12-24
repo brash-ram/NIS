@@ -1,6 +1,7 @@
 package ru.rsreu.nis.service;
 
 import lombok.RequiredArgsConstructor;
+import ru.rsreu.nis.database.DAOFactory;
 import ru.rsreu.nis.database.dao.SessionDAO;
 import ru.rsreu.nis.database.impl.SessionDAOImpl;
 import ru.rsreu.nis.entity.Session;
@@ -20,14 +21,14 @@ public class SessionService {
     public static SessionService getInstance() {
         synchronized (SessionService.class) {
             if (instance == null) {
-                instance = new SessionService(SessionDAOImpl.getInstance(), ServiceFactory.getUserService());
+                instance = new SessionService(DAOFactory.getSessionDAO(), ServiceFactory.getUserService());
             }
         }
         return instance;
     }
 
     public Optional<Session> getSession(Integer userId) {
-        return sessionDAO.getSession(userId);
+        return sessionDAO.findByUserId(userId);
     }
 
     public User createSession(String login, String password) throws Exception {
@@ -38,9 +39,15 @@ public class SessionService {
         }
 
         Date activeUntil = new Date(System.currentTimeMillis() + SESSION_TIME_LIVE);
-        Session session = new Session(user, activeUntil);
+        Optional<Session> optionalSession = sessionDAO.findByUserId(user.getUserId());
+        Session session = optionalSession.isPresent() ?
+                optionalSession.get().setActiveUntil(activeUntil) :
+                new Session(user, activeUntil);
+//                optionalSession.orElseGet(() -> new Session(user, activeUntil));
 
-        sessionDAO.save(session);
+        if (!optionalSession.isPresent()) {
+            sessionDAO.save(session);
+        }
 
         return user;
     }

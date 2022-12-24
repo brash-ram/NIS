@@ -26,7 +26,7 @@ public class DAOMapper {
         return new Session(
                 rs.getInt("session_id"),
                 DAOMapper.mapUser(rs),
-                rs.getTimestamp("activeUntil")
+                rs.getTimestamp("active_until")
         );
     }
 }

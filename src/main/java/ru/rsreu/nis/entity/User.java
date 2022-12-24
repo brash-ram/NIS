@@ -6,10 +6,13 @@ import lombok.NoArgsConstructor;
 import ru.rsreu.nis.entity.enums.Roles;
 import ru.rsreu.nis.entity.enums.UserStatus;
 
+import javax.security.auth.Subject;
+import java.security.Principal;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class User implements Principal {
     private Integer userId;
     private String login;
     private String password;
@@ -17,4 +20,14 @@ public class User {
     private String firstName;
     private String lastName;
     private Roles userRole;
+
+    @Override
+    public boolean implies(Subject subject) {
+        return Principal.super.implies(subject);
+    }
+
+    @Override
+    public String getName() {
+        return login;
+    }
 }

@@ -1,12 +1,11 @@
 package ru.rsreu.nis.database.impl;
 
 import ru.rsreu.nis.database.AbstractDAO;
-import ru.rsreu.nis.mapper.DAOMapper;
-import ru.rsreu.nis.resourcer.ProjectResourcer;
-import ru.rsreu.nis.database.ConnectionPool;
 import ru.rsreu.nis.database.dao.UserDAO;
 import ru.rsreu.nis.entity.User;
-import java.sql.Connection;
+import ru.rsreu.nis.mapper.DAOMapper;
+import ru.rsreu.nis.resourcer.ProjectResourcer;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
