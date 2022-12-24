@@ -64,14 +64,4 @@ public class SessionService {
         return sessionDAO.findAll();
     }
 
-    public List<Session> getAllSessionsByActive() {
-        List<Session> sessions = sessionDAO.findAll();
-        return sessions.stream().peek(session -> {
-            if (session.getActiveUntil() != null && SessionUtil.checkValid(session)) {
-                session.setStatus(SessionStatus.AUTHORIZED);
-            } else {
-                session.setStatus(SessionStatus.NOT_AUTHORIZED);
-            }
-        }).collect(Collectors.toList());
-    }
 }

@@ -8,5 +8,6 @@ public class RequestAttribute {
     public static final String EXCHANGE_REQUESTS = "exchangeRequests";
     public static final String MODE = "mode";
     public static final String USERS = "users";
+    public static final String SESSIONS = "sessions";
     public static final String USER = "user";
 }

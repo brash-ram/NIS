@@ -44,17 +44,17 @@
                 <tbody>
                     <c:forEach var="session" items="${sessions}">
                     <tr>
-                        <td>${user.user.lastName}</td>
-                        <td>${user.user.firstName}</td>
-                        <td>${user.user.userStatus}</td>
-                        <td>${user.user.userRole}</td>
-                        <td>${user.status == SessionStatus.AUTHORIZED ? "Да" : "Нет"}</td>
+                        <td>${session.getUser().getLastName()}</td>
+                        <td>${session.getUser().getFirstName()}</td>
+                        <td>${session.getUser().userStatus.getRussianName()}</td>
+                        <td>${session.getUser().userRole.getRussianName()}</td>
+                        <td>${session.status.getRussianName()}</td>
                         <td>
                             <div class="w-full flex items-center justify-center space-x-2">
-                                <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="deleteUser(${user.getUserId()})">
+                                <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="deleteUser(${session.getUser().getUserId()})">
                                     <span class="material-symbols-outlined">delete</span>
                                 </button>
-                                <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="changeUser(${user.getUserId()})">
+                                <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="changeUser(${session.getUser().getUserId()})">
                                     <span class="material-symbols-outlined">edit</span>
                                 </button>
                             </div>
