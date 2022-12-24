@@ -5,6 +5,8 @@ import ru.rsreu.nis.database.DAOFactory;
 import ru.rsreu.nis.database.dao.UserDAO;
 import ru.rsreu.nis.entity.User;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 public class UserService {
     private static UserService instance;
@@ -25,5 +27,9 @@ public class UserService {
 
     public User getUser(Integer id) {
         return userDAO.findUserById(4);
+    }
+
+    public List<User> getAllUsers() {
+        return userDAO.findAll();
     }
 }

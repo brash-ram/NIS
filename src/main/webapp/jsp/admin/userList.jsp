@@ -8,6 +8,7 @@
     <style>
         <%@include file="../../css/style.css" %>
     </style>
+    <script type="text/javascript" src=""></script>
 </head>
 <body>
 <div class="userList">
@@ -17,15 +18,15 @@
             <div class="flex items-center space-x-2 mb-2">
                 <div class="flex items-center">
                     <input checked id="allUsers-radio" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="allUsers-radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Все пользователи</label>
+                    <label for="allUsers-radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300" itemref="/nis/userList">Все пользователи</label>
                 </div>
                 <div class="flex items-center">
                     <input id="authorizedUsers-radio" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="authorizedUsers-radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Авторизованные пользователи</label>
+                    <label for="authorizedUsers-radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300" itemref="/nis/userList">Авторизованные пользователи</label>
                 </div>
                 <div class="flex items-center ">
                     <input id="blockedUsers-radio" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="blockedUsers-radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Заблокированные пользователи</label>
+                    <label for="blockedUsers-radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300" itemref="/nis/userList">Заблокированные пользователи</label>
                 </div>
             </div>
             <table class="table">
@@ -33,33 +34,30 @@
                 <tr>
                     <th>Фамилия</th>
                     <th>Имя</th>
-                    <th>Логин</th>
                     <th>Статус</th>
                     <th>Роль в системе</th>
                     <th>Действия</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <c:forEach var="user" items="users">
-
+                    <c:forEach var="user" items="${users}">
+                    <tr>
+                        <td>${user.lastName}</td>
+                        <td>${user.firstName}</td>
+                        <td>${user.userStatus}</td>
+                        <td>${user.userRole}</td>
+                        <td>
+                            <div class="w-full flex items-center justify-center space-x-2">
+                                <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="deleteUser(${user.getUserId()})">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                                <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="changeUser(${user.getUserId()})">
+                                    <span class="material-symbols-outlined">edit</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
                     </c:forEach>
-                    <td>Иванов</td>
-                    <td>Иван</td>
-                    <td>ivanovIone</td>
-                    <td>Не заблокирован</td>
-                    <td>Водитель</td>
-                    <td>
-                        <div class="w-full flex items-center justify-center space-x-2">
-                            <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="deleteUser(${user.getId()})">
-                                <span class="material-symbols-outlined">delete</span>
-                            </button>
-                            <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="changeUser(${user.getId()})">
-                                <span class="material-symbols-outlined">edit</span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
                 </tbody>
             </table>
         </div>
