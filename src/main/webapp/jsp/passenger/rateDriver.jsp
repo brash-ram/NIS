@@ -20,11 +20,11 @@
                 <div class="rateDriver-mark">
                     <label>Выберите оценку: </label>
                     <select id="selectMark">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                     </select>
                 </div>
                 <br>

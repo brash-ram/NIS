@@ -1,12 +1,12 @@
 package ru.rsreu.nis.database.dao;
 
-import ru.rsreu.nis.database.AbstractDAO;
 import ru.rsreu.nis.entity.Trip;
 
 import java.util.List;
 
 public interface TripDAO {
     List<Trip> findAll();
+    List<Trip> findAllByDriver(Integer driverId);
     Trip findTripById(Integer id);
     Trip findTripById(String id);
     void update(Trip trip);
