@@ -61,7 +61,7 @@ public class SessionDAOImpl extends AbstractDAO implements SessionDAO {
     }
 
     @Override
-    public void deleteSession(User user) {
+    public void delete(User user) {
         String query = resourcer.getString("session.delete");
 
         try (PreparedStatement statement = connection.prepareStatement(query)) {
@@ -74,7 +74,7 @@ public class SessionDAOImpl extends AbstractDAO implements SessionDAO {
     }
 
     @Override
-    public Optional<Session> getSession(Integer userId) {
+    public Optional<Session> findByUserId(Integer userId) {
         String query = resourcer.getString("session.find.by.id");
 
         try (PreparedStatement st = connection.prepareStatement(query)) {
@@ -91,4 +91,6 @@ public class SessionDAOImpl extends AbstractDAO implements SessionDAO {
 
         return Optional.empty();
     }
+
+
 }

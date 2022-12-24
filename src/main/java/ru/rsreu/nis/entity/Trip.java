@@ -13,11 +13,11 @@ import java.sql.Date;
 @NoArgsConstructor
 public class Trip {
     private Integer tripId;
-    private String startPoLong;
-    private String finalPoLong;
+    private String startPoint;
+    private String finalPoint;
     private Date tripDate;
     private Integer freeSeats;
-    private BigDecimal price;
+    private Integer price;
     private Integer driverId;
     private TripStatus tripStatus;
 }
