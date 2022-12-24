@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Добавление пользователя</title>
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.5/dist/flowbite.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.5/dist/flowbite.min.css"/>
     <style>
         <%@include file="../../css/style.css" %>
     </style>
@@ -13,8 +13,9 @@
 <div class="addUser">
     <div class="container">
         <div class="addUser-inner">
-            <form name = "AddUserForm" method="POST" action = "addUser">
-                <div class="addUser-title title">Добавление пользователя</div><br>
+            <form name="AddUserForm" method="POST" action="addUser">
+                <div class="addUser-title title">Добавление пользователя</div>
+                <br>
                 <div class="addUser-firstname">
                     <div class="addUser-firstname-title">Имя</div>
                     <input type="text" id="firstname" name="firstname" class="addUser-firstname-input">
@@ -39,7 +40,8 @@
                         <option value="${Roles.ADMIN}">Администратор</option>
                         <option value="${Roles.MODERATOR}">Модератор</option>
                     </select>
-                </div><br>
+                </div>
+                <br>
                 <button class="submit" type="submit" name="submit">Добавить пользователя</button>
             </form>
         </div>
