@@ -12,4 +12,6 @@ public class RequestParam {
     public static final String DATE = "date";
     public static final String FREE_SEATS = "free-seats";
     public static final String PRICE = "price";
+
+    public static final String STATUS = "status";
 }

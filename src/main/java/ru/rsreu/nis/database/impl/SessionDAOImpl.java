@@ -29,6 +29,40 @@ public class SessionDAOImpl extends AbstractDAO implements SessionDAO {
     }
 
     @Override
+    public void update(Session session) {
+        String query = ProjectResourcer.getInstance().getString("session.update");
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setDate(1, new Date(session.getActiveUntil().getTime()));
+            statement.setLong(2, session.getSession_id());
+
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public List<Session> findAllByUserStatus(String status) {
+        String query = resourcer.getString("session.find.all.status");
+        List<Session> sessions = new ArrayList<>();
+
+        try (PreparedStatement st = connection.prepareStatement(query)) {
+            st.setString(1, status);
+
+            ResultSet resultSet = st.executeQuery();
+
+            while (resultSet.next()) {
+                sessions.add(DAOMapper.mapSession(resultSet));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return sessions;
+    }
+
+    @Override
     public void save(Session session) {
         String query = ProjectResourcer.getInstance().getString("session.save");
 

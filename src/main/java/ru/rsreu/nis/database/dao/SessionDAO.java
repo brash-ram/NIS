@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface SessionDAO {
+    List<Session> findAllByUserStatus(String status);
+
     void save(Session session);
 
     List<Session> findAll();
@@ -14,4 +16,6 @@ public interface SessionDAO {
     void delete(User user);
 
     Optional<Session> findByUserId(Integer userId);
+
+    void update(Session session);
 }

@@ -3,13 +3,16 @@ package ru.rsreu.nis.service;
 import lombok.RequiredArgsConstructor;
 import ru.rsreu.nis.database.DAOFactory;
 import ru.rsreu.nis.database.dao.SessionDAO;
-import ru.rsreu.nis.database.impl.SessionDAOImpl;
 import ru.rsreu.nis.entity.Session;
 import ru.rsreu.nis.entity.User;
+import ru.rsreu.nis.entity.enums.SessionStatus;
 import ru.rsreu.nis.entity.enums.UserStatus;
+import ru.rsreu.nis.utils.SessionUtil;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static ru.rsreu.nis.constant.GlobalOptions.SESSION_TIME_LIVE;
 
@@ -47,8 +50,28 @@ public class SessionService {
 
         if (!optionalSession.isPresent()) {
             sessionDAO.save(session);
+        } else {
+            sessionDAO.update(session);
         }
 
         return user;
+    }
+
+    public List<Session> getAllSessions() {
+        return sessionDAO.findAll();
+    }
+    public List<Session> getAllSessionsByUserStatus(String userStatus) {
+        return sessionDAO.findAll();
+    }
+
+    public List<Session> getAllSessionsByActive() {
+        List<Session> sessions = sessionDAO.findAll();
+        return sessions.stream().peek(session -> {
+            if (session.getActiveUntil() != null && SessionUtil.checkValid(session)) {
+                session.setStatus(SessionStatus.AUTHORIZED);
+            } else {
+                session.setStatus(SessionStatus.NOT_AUTHORIZED);
+            }
+        }).collect(Collectors.toList());
     }
 }
