@@ -28,6 +28,10 @@ public class CommandConfig {
             Map.entry(Route.RATE_DRIVER, new RateDriverCommand()),
             Map.entry(Route.TRIP_REQUESTS, new TripRequestsCommand()),
 
+            Map.entry(Route.ADMIN_PROFILE, new AdminProfileCommand()),
+            Map.entry(Route.ADD_USER, new AddUserCommand()),
+            Map.entry(Route.USER_LIST, new UserListCommand()),
+
             Map.entry(Route.NOT_FOUND, new EmptyCommand())
     );
 
@@ -49,7 +53,10 @@ public class CommandConfig {
             Route.CREATE_REQUEST,
             Route.DRIVER_MARKS,
             Route.RATE_DRIVER,
-            Route.TRIP_REQUESTS
+            Route.TRIP_REQUESTS,
+            Route.ADMIN_PROFILE,
+            Route.ADD_USER,
+            Route.USER_LIST
     );
 
     public static FrontCommand getCommand(String path) {

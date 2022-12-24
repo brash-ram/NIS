@@ -17,6 +17,10 @@ public enum Route {
     DRIVER_MARKS("/driverMarks"),
     RATE_DRIVER("/rateDriver"),
     TRIP_REQUESTS("/tripRequests"),
+
+    ADMIN_PROFILE("/adminProfile"),
+    ADD_USER("/addUser"),
+    USER_LIST("/userList"),
     LOGOUT("/login"),
     MY_REQUESTS("/my_requests"),
     NOT_FOUND("404");

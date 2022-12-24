@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Меню пассажира</title>
-<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css">--%>
     <style>
         <%@include file="../../css/style.css" %>
     </style>

@@ -17,6 +17,10 @@ public enum Jsp {
     RATE_DRIVER("/jsp/passenger/rateDriver.jsp"),
     TRIP_REQUESTS("/jsp/passenger/tripRequests.jsp"),
 
+
+    ADMIN_PROFILE("/jsp/admin/adminProfile.jsp"),
+    ADD_USER("/jsp/admin/addUser.jsp"),
+    USER_LIST("/jsp/admin/userList.jsp"),
     NOT_FOUND("/pages/404.jsp"),
 
     REDIRECT("/templates/redirect.jsp");
