@@ -27,6 +27,26 @@ public class TripDAOImpl extends AbstractDAO implements TripDAO {
     }
 
     @Override
+    public List<Trip> findAllByDriver(Integer driverId) {
+        String query = resourcer.getString("trip.find.all.driver");
+        List<Trip> trips = new ArrayList<>();
+
+        try (PreparedStatement st = connection.prepareStatement(query)) {
+            st.setInt(1, driverId);
+
+            ResultSet resultSet = st.executeQuery();
+
+            while (resultSet.next()) {
+                trips.add(DAOMapper.mapTrip(resultSet));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return trips;
+    }
+
+    @Override
     public List<Trip> findAll() {
         String query = resourcer.getString("trip.find.all");
         List<Trip> trips = new ArrayList<>();
