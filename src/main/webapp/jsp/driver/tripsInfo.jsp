@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Информация о поездках</title>
@@ -23,13 +24,15 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Рязань</td>
-                <td>Москва</td>
-                <td>12.12.2012</td>
-                <td>2500</td>
-                <td>Завершена</td>
-            </tr>
+                <c:forEach var="trip" items="${trips}">
+                    <tr>
+                        <td>${trip.startPoint}</td>
+                        <td>${trip.finalPoint}</td>
+                        <td>${trip.tripDate}</td>
+                        <td>${trip.price}</td>
+                        <td>${trip.tripStatus.getRussianName()}</td>
+                    </tr>
+                </c:forEach>
             </tbody>
         </table>
     </div>
