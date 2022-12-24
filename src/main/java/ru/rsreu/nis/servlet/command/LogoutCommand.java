@@ -1,6 +1,5 @@
 package ru.rsreu.nis.servlet.command;
 
-import ru.rsreu.nis.enums.Jsp;
 import ru.rsreu.nis.enums.Route;
 import ru.rsreu.nis.servlet.FrontCommand;
 
@@ -13,7 +12,7 @@ public class LogoutCommand extends FrontCommand {
     public void process() throws ServletException, IOException {
         HttpSession session = request.getSession();
         session.invalidate();
-        redirect(String.valueOf(Route.LOGIN));
+        redirect(Route.LOGIN.getAbsolute());
     }
 
 }

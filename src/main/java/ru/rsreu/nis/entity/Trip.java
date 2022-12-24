@@ -5,8 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.rsreu.nis.entity.enums.TripStatus;
 
-import java.math.BigDecimal;
-import java.sql.Date;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -20,4 +19,5 @@ public class Trip {
     private Integer price;
     private Integer driverId;
     private TripStatus tripStatus;
+
 }

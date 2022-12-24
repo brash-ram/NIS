@@ -10,7 +10,7 @@ import ru.rsreu.nis.entity.enums.RequestStatus;
 @AllArgsConstructor
 public class Request {
     private Integer requestId;
-    private Integer passengerId;
-    private Integer tripId;
+    private User passenger;
+    private Trip trip;
     private RequestStatus requestStatus;
 }

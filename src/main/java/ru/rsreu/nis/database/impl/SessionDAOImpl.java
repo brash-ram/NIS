@@ -30,7 +30,7 @@ public class SessionDAOImpl extends AbstractDAO implements SessionDAO {
 
     @Override
     public void update(Session session) {
-        String query = ProjectResourcer.getInstance().getString("session.update");
+        String query = resourcer.getString("session.update");
 
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setDate(1, new Date(session.getActiveUntil().getTime()));
@@ -64,7 +64,7 @@ public class SessionDAOImpl extends AbstractDAO implements SessionDAO {
 
     @Override
     public void save(Session session) {
-        String query = ProjectResourcer.getInstance().getString("session.save");
+        String query = resourcer.getString("session.save");
 
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setLong(1, session.getUser().getUserId());
