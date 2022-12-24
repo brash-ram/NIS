@@ -1,4 +1,4 @@
-package ru.rsreu.nis.servlet.command;
+package ru.rsreu.nis.servlet.command.driver;
 
 import ru.rsreu.nis.config.AuthConfig;
 import ru.rsreu.nis.constant.RequestParam;

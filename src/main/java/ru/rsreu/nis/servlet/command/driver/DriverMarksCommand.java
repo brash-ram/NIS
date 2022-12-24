@@ -1,4 +1,4 @@
-package ru.rsreu.nis.servlet.command;
+package ru.rsreu.nis.servlet.command.driver;
 
 import ru.rsreu.nis.enums.Jsp;
 import ru.rsreu.nis.servlet.FrontCommand;
@@ -6,9 +6,9 @@ import ru.rsreu.nis.servlet.FrontCommand;
 import javax.servlet.ServletException;
 import java.io.IOException;
 
-public class CreateRequestCommand extends FrontCommand {
+public class DriverMarksCommand extends FrontCommand {
     @Override
     public void process() throws ServletException, IOException {
-        forward(Jsp.CREATE_REQUEST);
+        forward(Jsp.DRIVER_MARKS);
     }
 }

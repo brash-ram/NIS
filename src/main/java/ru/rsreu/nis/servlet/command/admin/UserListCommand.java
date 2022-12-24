@@ -1,4 +1,4 @@
-package ru.rsreu.nis.servlet.command;
+package ru.rsreu.nis.servlet.command.admin;
 
 import ru.rsreu.nis.constant.RequestAttribute;
 import ru.rsreu.nis.constant.RequestParam;

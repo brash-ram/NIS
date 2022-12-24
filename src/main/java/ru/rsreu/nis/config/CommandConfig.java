@@ -3,6 +3,12 @@ package ru.rsreu.nis.config;
 import ru.rsreu.nis.enums.Route;
 import ru.rsreu.nis.servlet.FrontCommand;
 import ru.rsreu.nis.servlet.command.*;
+import ru.rsreu.nis.servlet.command.admin.AddUserCommand;
+import ru.rsreu.nis.servlet.command.admin.AdminProfileCommand;
+import ru.rsreu.nis.servlet.command.admin.UserInfoCommand;
+import ru.rsreu.nis.servlet.command.admin.UserListCommand;
+import ru.rsreu.nis.servlet.command.driver.*;
+import ru.rsreu.nis.servlet.command.passenger.*;
 
 import java.util.Arrays;
 import java.util.List;

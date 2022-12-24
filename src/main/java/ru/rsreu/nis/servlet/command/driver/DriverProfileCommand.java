@@ -1,14 +1,15 @@
-package ru.rsreu.nis.servlet.command;
+package ru.rsreu.nis.servlet.command.driver;
 
 import ru.rsreu.nis.enums.Jsp;
 import ru.rsreu.nis.servlet.FrontCommand;
+
 import javax.servlet.ServletException;
 import java.io.IOException;
 
-public class PassengerProfileCommand extends FrontCommand {
+public class DriverProfileCommand extends FrontCommand {
     @Override
     public void process() throws ServletException, IOException {
-        forward(Jsp.PASSENGER_PROFILE);
+        forward(Jsp.DRIVER_PROFILE);
     }
 
     @Override
