@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.rsreu.nis.entity.enums.TripStatus;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Data
 @AllArgsConstructor

@@ -5,14 +5,11 @@ import ru.rsreu.nis.database.DAOFactory;
 import ru.rsreu.nis.database.dao.SessionDAO;
 import ru.rsreu.nis.entity.Session;
 import ru.rsreu.nis.entity.User;
-import ru.rsreu.nis.entity.enums.SessionStatus;
 import ru.rsreu.nis.entity.enums.UserStatus;
-import ru.rsreu.nis.utils.SessionUtil;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import static ru.rsreu.nis.constant.GlobalOptions.SESSION_TIME_LIVE;
 

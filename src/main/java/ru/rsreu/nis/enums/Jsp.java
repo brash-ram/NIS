@@ -17,6 +17,7 @@ public enum Jsp {
     DRIVER_MARKS("/jsp/passenger/driverMarks.jsp"),
     RATE_DRIVER("/jsp/passenger/rateDriver.jsp"),
     ACTIVE_REQUESTS("/jsp/passenger/activeRequests.jsp"),
+    TRIP_REQUESTS(""),
 
 
     ADMIN_PROFILE("/jsp/admin/adminProfile.jsp"),

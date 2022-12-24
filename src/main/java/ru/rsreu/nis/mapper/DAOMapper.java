@@ -9,6 +9,7 @@ import ru.rsreu.nis.entity.enums.Roles;
 import ru.rsreu.nis.entity.enums.TripStatus;
 import ru.rsreu.nis.entity.enums.UserStatus;
 
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -30,7 +31,7 @@ public class DAOMapper {
         return new Session(
                 rs.getInt("session_id"),
                 DAOMapper.mapUser(rs),
-                rs.getTimestamp("active_until")
+                new Date(rs.getTimestamp("active_until").getTime())
         );
     }
 
@@ -43,12 +44,12 @@ public class DAOMapper {
         );
     }
 
-    private static Trip mapTrip(ResultSet rs)  throws SQLException {
+    public static Trip mapTrip(ResultSet rs)  throws SQLException {
         return new Trip(
                 rs.getInt("trip_id"),
-                rs.getString("first_point"),
+                rs.getString("start_point"),
                 rs.getString("final_point"),
-                rs.getTimestamp("trip_date"),
+                new Date(rs.getTimestamp("trip_date").getTime()),
                 rs.getInt("free_seats"),
                 rs.getInt("price"),
                 rs.getInt("driver_id"),

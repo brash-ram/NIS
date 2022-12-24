@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import ru.rsreu.nis.entity.enums.SessionStatus;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Data
 @AllArgsConstructor

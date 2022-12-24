@@ -2,12 +2,16 @@ package ru.rsreu.nis.database.impl;
 
 import ru.rsreu.nis.database.AbstractDAO;
 import ru.rsreu.nis.database.dao.TripDAO;
+import ru.rsreu.nis.entity.Session;
 import ru.rsreu.nis.entity.Trip;
+import ru.rsreu.nis.mapper.DAOMapper;
 import ru.rsreu.nis.resourcer.ProjectResourcer;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TripDAOImpl extends AbstractDAO implements TripDAO {
@@ -24,7 +28,20 @@ public class TripDAOImpl extends AbstractDAO implements TripDAO {
 
     @Override
     public List<Trip> findAll() {
-        return null;
+        String query = resourcer.getString("trip.find.all");
+        List<Trip> trips = new ArrayList<>();
+
+        try (PreparedStatement st = connection.prepareStatement(query)) {
+            ResultSet resultSet = st.executeQuery();
+
+            while (resultSet.next()) {
+                trips.add(DAOMapper.mapTrip(resultSet));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return trips;
     }
 
     @Override

@@ -5,6 +5,8 @@ import ru.rsreu.nis.database.DAOFactory;
 import ru.rsreu.nis.database.dao.TripDAO;
 import ru.rsreu.nis.entity.Trip;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 public class TripService {
     private static TripService instance;
@@ -22,4 +24,6 @@ public class TripService {
     public void saveTrip(Trip trip) {
         tripDAO.save(trip);
     }
+
+    public List<Trip> findAll() {return tripDAO.findAll();}
 }

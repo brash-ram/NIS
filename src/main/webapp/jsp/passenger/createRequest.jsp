@@ -31,7 +31,7 @@
                     <tr>
                         <td>${trip.getStartPoint()}</td>
                         <td>${trip.getFinalPoint()}</td>
-                        <td>${trip.getTripDate}</td>
+                        <td>${trip.getTripDate()}</td>
                         <td>${trip.getFreeSeats()}</td>
                         <td>${trip.getPrice()}</td>
                         <td>
