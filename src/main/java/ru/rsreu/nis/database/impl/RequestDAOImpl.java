@@ -24,6 +24,19 @@ public class RequestDAOImpl extends AbstractDAO implements RequestDAO {
     }
 
     @Override
+    public void delete(Integer requestId) {
+        String query = resourcer.getString("request.delete");
+
+        try (PreparedStatement st = connection.prepareStatement(query)) {
+            st.setInt(1, requestId);
+
+            st.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public List<Request> findAllByDriver(Integer driverId) {
         String query = resourcer.getString("request.find.all.driver");
         List<Request> requests = new ArrayList<>();

@@ -31,15 +31,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="trip" items="${trips}">
+                <c:forEach var="request" items="${requests}">
                     <tr>
-                        <td>${trip.getStartPoint()}</td>
-                        <td>${trip.getFinalPoint()}</td>
-                        <td>${trip.getTripDate()}</td>
-                        <td>${trip.getTripStatus()}</td>
+                        <td>${request.trip.getStartPoint()}</td>
+                        <td>${request.trip.getFinalPoint()}</td>
+                        <td>${request.trip.getTripDate()}</td>
+                        <td>${request.requestStatus.getName()}</td>
                         <td>
                             <div class="w-full flex items-center justify-center space-x-2">
-                                <button class="text-gray-700 hover:text-gray-900"onclick="">
+                                <button class="text-gray-700 hover:text-gray-900" onclick="deleteRequest(${request.requestId})">
                                     <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>

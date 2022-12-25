@@ -1,5 +1,17 @@
 package ru.rsreu.nis.entity.enums;
 
 public enum RequestStatus {
-    APPROVED, NOT_APPROVED, IN_WAITING
+    APPROVED("Одобрена"),
+    NOT_APPROVED("Отклонена"),
+    IN_WAITING("В ожидании");
+
+    private final String name;
+
+    RequestStatus(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

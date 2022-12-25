@@ -15,4 +15,5 @@ public class RequestParam {
 
     public static final String STATUS = "status";
     public static final String TRIP_ID = "trip_id";
+    public static final String REQUEST_ID = "request_id";
 }

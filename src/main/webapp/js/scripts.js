@@ -37,20 +37,29 @@ function createRequest(tripId) {
     window.location.reload();
 }
 
-$(document).ready(function () {
-    $('#ALL').click(function () {
-        redirect('userList',{status: "ALL"});
+function deleteRequest(requestId) {
+    $.post("activeRequests", {request_id: requestId}, function () {
+        console.log("deleteRequest");
+    }).fail(function () {
+        console.log("deleteRequest error!");
     });
-    // $.post('deleteUser', {}, function () {
-    //     window.location.reload();
-    // })
+    window.location.reload();
+}
 
-
-    $('#AUTHORIZED').click(function () {
-        redirect('userList',{status: "AUTHORIZED"});
-    });
-
-    $('#BLOCKED').click(function () {
-        redirect('userList',{status: "BLOCKED"});
-    });
-});
+// $(document).ready(function () {
+//     $('#ALL').click(function () {
+//         redirect('userList',{status: "ALL"});
+//     });
+//     // $.post('deleteUser', {}, function () {
+//     //     window.location.reload();
+//     // })
+//
+//
+//     $('#AUTHORIZED').click(function () {
+//         redirect('userList',{status: "AUTHORIZED"});
+//     });
+//
+//     $('#BLOCKED').click(function () {
+//         redirect('userList',{status: "BLOCKED"});
+//     });
+// });

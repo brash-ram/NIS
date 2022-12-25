@@ -27,7 +27,6 @@ public abstract class FrontCommand {
         try {
             this.user = UserUtil.tryGetFromRequest(request);
         } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
