@@ -90,22 +90,21 @@ function unblockUser(userId) {
     });
     window.location.reload();
 }
-function createMark() {
-    // let data = $(this).closest('form').serializeArray();
-    // const data = new FormData(document.querySelector('form'));
-    var data = $('.some_form').serializeArray().reduce(function(obj, item) {
-        obj[item.name] = item.value;
-        return obj;
-    }, {});
-    // data["mark"] = document.getElementById("selectDriverMark").value;
-    $.post("createMark", data, function () {
-        console.log("createMark");
-    }).fail(function () {
-        console.log("createMark error!");
-    });
-    window.location.reload();
-}
+$(document).ready(() => {
+    const formElements = document.querySelectorAll('.some_form');
 
+    [...formElements].forEach(formEl => {
+        formEl.addEventListener('submit', e => {
+            e.preventDefault();
+
+            $.post('createMark', $(formEl).serialize(), function () {
+                console.log("createMark");
+            }).fail(function () {
+                console.log("createMark error!");
+            });
+        });
+    });
+});
 
 // $(document).ready(function () {
 //     $('#ALL').click(function () {

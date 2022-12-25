@@ -55,17 +55,11 @@
                                                 <c:if test="${!all_mark.equals(mark.mark)}">
                                                     <option value="${all_mark}">${all_mark}</option>
                                                 </c:if>
-        <%--                                        <option></option>--%>
-        <%--                                        <option>1</option>--%>
-        <%--                                        <option>2</option>--%>
-        <%--                                        <option>3</option>--%>
-        <%--                                        <option>4</option>--%>
-        <%--                                        <option>5</option>--%>
                                             </c:forEach>
                                         </c:if>
                                     </c:forEach>
                                   </select>
-                                <button class="submit" type="button" onclick="createMark()">Оценить</button>
+                                <button class="submit">Оценить</button>
                             </form>
                         </td>
                     </tr>
