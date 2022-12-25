@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateUtil {
-    private static final SimpleDateFormat dateFormat1 = new SimpleDateFormat("dd-MM-yyyy");
+    private static final SimpleDateFormat dateFormat1 = new SimpleDateFormat("yyyy-MM-dd");
 
     public static java.sql.Date parse(String date) {
         Date result;

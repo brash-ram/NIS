@@ -7,4 +7,5 @@ public class ServiceFactory {
     public static TripService getTripService() {return TripService.getInstance();}
 
     public static RequestService getRequestService() {return RequestService.getInstance();}
+    public static MarkService getMarkService() {return MarkService.getInstance();}
 }

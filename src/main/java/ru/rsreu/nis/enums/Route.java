@@ -33,7 +33,7 @@ public enum Route {
     DELETE_TRIP("/deleteTrip"),
     COMPLETE_TRIP("/completeTrip"),
     MY_REQUESTS("/my_requests"),
-    REQUESTS_HISTORY("/requestsHistory"),
+    CREATE_MARK("/createMark"),
     NOT_FOUND("404");
 
     private final String route;

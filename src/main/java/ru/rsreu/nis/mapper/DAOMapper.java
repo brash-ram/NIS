@@ -1,9 +1,6 @@
 package ru.rsreu.nis.mapper;
 
-import ru.rsreu.nis.entity.Request;
-import ru.rsreu.nis.entity.Session;
-import ru.rsreu.nis.entity.Trip;
-import ru.rsreu.nis.entity.User;
+import ru.rsreu.nis.entity.*;
 import ru.rsreu.nis.entity.enums.RequestStatus;
 import ru.rsreu.nis.entity.enums.Roles;
 import ru.rsreu.nis.entity.enums.TripStatus;
@@ -54,6 +51,16 @@ public class DAOMapper {
                 rs.getInt("price"),
                 rs.getInt("driver_id"),
                 TripStatus.valueOf( rs.getString("trip_status"))
+        );
+    }
+
+    public static Mark mapMark(ResultSet rs)  throws SQLException {
+        return new Mark(
+                rs.getInt("mark_id"),
+                DAOMapper.mapUser(rs),
+                rs.getInt("to_user"),
+                rs.getInt("mark"),
+                DAOMapper.mapTrip(rs)
         );
     }
 }

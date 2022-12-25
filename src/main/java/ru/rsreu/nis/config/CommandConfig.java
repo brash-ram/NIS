@@ -46,6 +46,8 @@ public class CommandConfig {
             Map.entry(Route.BLOCK_USER, new BlockUserCommand()),
             Map.entry(Route.UNBLOCK_USER, new UnblockUserCommand()),
 
+            Map.entry(Route.CREATE_MARK, new CreateMarkCommand()),
+
             Map.entry(Route.NOT_FOUND, new EmptyCommand())
     );
 
@@ -79,7 +81,8 @@ public class CommandConfig {
             Route.USER_LIST,
             Route.MODER_PROFILE,
             Route.TRIP_LIST,
-            Route.REQUEST_LIST
+            Route.REQUEST_LIST,
+            Route.CREATE_MARK
     );
 
     public static FrontCommand getCommand(String path) {

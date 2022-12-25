@@ -42,15 +42,30 @@
                         <td>${request.requestStatus.getRussianName()}</td>
                         <td></td>
                         <td>
-                            <form name = "SelectMarkForm" method="POST" action = "selectMark">
-                                <select id="selectDriverMark">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                            <form class="some_form" name = "SelectMarkForm">
+                                <input type="hidden" name="trip_id" value="${request.trip.tripId}"/>
+                                <select id="selectDriverMark" name="mark">
+                                    <c:forEach var="mark" items="${marks}">
+                                        <c:if test="${request.trip.tripId.equals(mark.trip.tripId)}">
+                                            <option></option>
+                                            <c:forEach var="all_mark" items="${all_marks}">
+                                                <c:if test="${all_mark.equals(mark.mark)}">
+                                                    <option value="${all_mark}" selected>${all_mark}</option>
+                                                </c:if>
+                                                <c:if test="${!all_mark.equals(mark.mark)}">
+                                                    <option value="${all_mark}">${all_mark}</option>
+                                                </c:if>
+        <%--                                        <option></option>--%>
+        <%--                                        <option>1</option>--%>
+        <%--                                        <option>2</option>--%>
+        <%--                                        <option>3</option>--%>
+        <%--                                        <option>4</option>--%>
+        <%--                                        <option>5</option>--%>
+                                            </c:forEach>
+                                        </c:if>
+                                    </c:forEach>
                                   </select>
-                                <button class="submit">Оценить</button>
+                                <button class="submit" type="button" onclick="createMark()">Оценить</button>
                             </form>
                         </td>
                     </tr>

@@ -7,6 +7,7 @@ public class RequestParam {
     public static final String PASSWORD = "password";
     public static final String IS_BLOCKED = "is_blocked";
     public static final String ROLE = "role";
+    public static final String MARk = "mark";
 
     public static final String FIRST_NAME = "first_name";
 
@@ -21,4 +22,5 @@ public class RequestParam {
     public static final String TRIP_ID = "trip_id";
     public static final String REQUEST_ID = "request_id";
     public static final String USER_ID = "user_id";
+    public static final String TO_USER = "to_user";
 }
