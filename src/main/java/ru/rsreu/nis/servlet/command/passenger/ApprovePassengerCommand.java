@@ -21,13 +21,11 @@ import java.util.Optional;
 public class ApprovePassengerCommand extends FrontCommand {
 
     private RequestService requestService;
-    private User user;
 
     @Override
     public void init(ServletContext servletContext, HttpServletRequest servletRequest, HttpServletResponse servletResponse) {
         super.init(servletContext, servletRequest, servletResponse);
         requestService = ServiceFactory.getRequestService();
-        user = UserUtil.tryGetFromRequest(request);
     }
 
     @Override

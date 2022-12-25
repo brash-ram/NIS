@@ -1,6 +1,8 @@
 package ru.rsreu.nis.servlet;
 
+import ru.rsreu.nis.entity.User;
 import ru.rsreu.nis.enums.Jsp;
+import ru.rsreu.nis.utils.UserUtil;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -13,6 +15,7 @@ public abstract class FrontCommand {
     protected ServletContext context;
     protected HttpServletRequest request;
     protected HttpServletResponse response;
+    protected User user;
 
     public void init(
             ServletContext servletContext,
@@ -21,6 +24,11 @@ public abstract class FrontCommand {
         this.context = servletContext;
         this.request = servletRequest;
         this.response = servletResponse;
+        try {
+            this.user = UserUtil.tryGetFromRequest(request);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void process() throws ServletException, IOException {
