@@ -27,7 +27,7 @@ public class ActiveRequestsCommand extends FrontCommand {
 
     @Override
     public void process() throws ServletException, IOException {
-        List<Request> requests = requestService.getAllRequestsByPassenger(user.getUserId());
+        List<Request> requests = requestService.getAllRequestsByPassengerActive(user.getUserId());
         request.setAttribute(RequestAttribute.REQUESTS, requests);
         forward(Jsp.ACTIVE_REQUESTS);
     }

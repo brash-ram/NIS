@@ -3,8 +3,8 @@ package ru.rsreu.nis.service;
 import lombok.RequiredArgsConstructor;
 import ru.rsreu.nis.database.DAOFactory;
 import ru.rsreu.nis.database.dao.RequestDAO;
-import ru.rsreu.nis.database.dao.SessionDAO;
 import ru.rsreu.nis.entity.Request;
+import ru.rsreu.nis.entity.enums.TripStatus;
 
 import java.util.List;
 
@@ -31,9 +31,6 @@ public class RequestService {
     public List<Request> getAllRequestsByDriver(Integer driverId) {
         return requestDAO.findAllByDriver(driverId);
     }
-    public List<Request> getAllRequestsByPassenger(Integer passengerId) {
-        return requestDAO.findAllByPassenger(passengerId);
-    }
 
     public void deleteRequest(Integer requestId) {
         requestDAO.delete(requestId);
@@ -45,5 +42,13 @@ public class RequestService {
 
     public void createRequest(Request request) {
         requestDAO.save(request);
+    }
+
+    public List<Request> getAllRequestsByPassengerActive(Integer passengerId) {
+        return requestDAO.findAllByPassengerAndTripStatus(passengerId, TripStatus.IN_WAITING);
+    }
+
+    public List<Request> getAllRequestsByPassengerHistory(Integer passengerId) {
+        return requestDAO.findAllByPassengerAndTripStatus(passengerId, TripStatus.COMPLETED);
     }
 }

@@ -40,7 +40,7 @@
                         <td>${request.trip.getTripDate()}</td>
                         <td>${request.trip.getFreeSeats()}</td>
                         <td>${request.trip.getPrice()}</td>
-                        <td>${request.requestStatus.getName()}</td>
+                        <td>${request.requestStatus.getRussianName()}</td>
                         <td>
                             <div class="w-full flex items-center justify-center space-x-2">
                                 <button class="text-gray-700 hover:text-gray-900" onclick="deleteRequest(${request.requestId})">

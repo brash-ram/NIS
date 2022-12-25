@@ -3,6 +3,7 @@ package ru.rsreu.nis.database.impl;
 import ru.rsreu.nis.database.AbstractDAO;
 import ru.rsreu.nis.database.dao.RequestDAO;
 import ru.rsreu.nis.entity.Request;
+import ru.rsreu.nis.entity.enums.TripStatus;
 import ru.rsreu.nis.mapper.DAOMapper;
 
 import java.sql.PreparedStatement;
@@ -123,12 +124,13 @@ public class RequestDAOImpl extends AbstractDAO implements RequestDAO {
     }
 
     @Override
-    public List<Request> findAllByPassenger(Integer passengerId) {
+    public List<Request> findAllByPassengerAndTripStatus(Integer passengerId, TripStatus tripStatus) {
         String query = resourcer.getString("request.find.all.passenger");
         List<Request> requests = new ArrayList<>();
 
         try (PreparedStatement st = connection.prepareStatement(query)) {
             st.setInt(1, passengerId);
+            st.setString(2, tripStatus.toString());
 
             ResultSet resultSet = st.executeQuery();
 

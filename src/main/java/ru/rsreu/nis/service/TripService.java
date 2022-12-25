@@ -2,8 +2,11 @@ package ru.rsreu.nis.service;
 
 import lombok.RequiredArgsConstructor;
 import ru.rsreu.nis.database.DAOFactory;
+import ru.rsreu.nis.database.dao.RequestDAO;
 import ru.rsreu.nis.database.dao.TripDAO;
+import ru.rsreu.nis.entity.Request;
 import ru.rsreu.nis.entity.Trip;
+import ru.rsreu.nis.entity.enums.RequestStatus;
 import ru.rsreu.nis.entity.enums.TripStatus;
 
 import java.util.List;
@@ -12,11 +15,12 @@ import java.util.List;
 public class TripService {
     private static TripService instance;
     private final TripDAO tripDAO;
+    private final RequestDAO requestDAO;
 
     public static TripService getInstance() {
         synchronized (TripService.class) {
             if (instance == null) {
-                instance = new TripService(DAOFactory.getTripDAO());
+                instance = new TripService(DAOFactory.getTripDAO(), DAOFactory.getRequestDAO());
             }
         }
         return instance;
@@ -41,6 +45,12 @@ public class TripService {
 
     public void completeTrip(Integer tripId) {
         Trip trip = this.getTrip(tripId);
+        List<Request> requests = requestDAO.findAllByTrip(tripId);
+        for (Request request : requests) {
+            if (request.getRequestStatus().equals(RequestStatus.IN_WAITING)) {
+                requestDAO.update(request.setRequestStatus(RequestStatus.NOT_APPROVED));
+            }
+        }
         this.updateTrip(trip.setTripStatus(TripStatus.COMPLETED));
     }
 }
