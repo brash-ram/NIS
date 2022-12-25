@@ -26,6 +26,10 @@ public class RequestService {
         return instance;
     }
 
+    public List<Request> getAllRequestByTrip(Integer tripId) {
+        return requestDAO.findAllByTrip(tripId);
+    }
+
     public List<Request> getAllRequests() {
         return requestDAO.findAll();
     }

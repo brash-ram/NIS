@@ -26,6 +26,26 @@ public class MarkDAOImpl extends AbstractDAO implements MarkDAO {
     }
 
     @Override
+    public List<Mark> findAllMarkByTripAndToUser(Integer tripId, Integer toUser) {
+        String query = resourcer.getString("mark.find.trip.toUser");
+        List<Mark> marks = new ArrayList<>();
+
+        try (PreparedStatement st = connection.prepareStatement(query)) {
+            st.setInt(1, tripId);
+            st.setInt(2, toUser);
+            ResultSet resultSet = st.executeQuery();
+
+            while (resultSet.next()) {
+                marks.add(DAOMapper.mapMark(resultSet));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return marks;
+    }
+
+    @Override
     public Mark findMarkByTripAndFromUser(Integer tripId, Integer fromUser) {
         String query = resourcer.getString("mark.find.trip.fromUser");
 

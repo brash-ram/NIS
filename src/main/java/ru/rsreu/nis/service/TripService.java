@@ -43,6 +43,7 @@ public class TripService {
         return tripDAO.findAllByNoPassenger(passengerId);
     }
 
+
     public void completeTrip(Integer tripId) {
         Trip trip = this.getTrip(tripId);
         List<Request> requests = requestDAO.findAllByTrip(tripId);

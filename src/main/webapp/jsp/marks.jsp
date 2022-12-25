@@ -29,9 +29,9 @@
       <tbody>
       <c:forEach var="mark" items="${marks}">
         <tr>
-          <td>${mark.getStartPoint()}</td>
-          <td>${mark.getFinalPoint()}</td>
-          <td>${mark.getTripDate()}</td>
+          <td>${mark.trip.getStartPoint()}</td>
+          <td>${mark.trip.getFinalPoint()}</td>
+          <td>${mark.trip.getTripDate()}</td>
           <td><a href="/nis/userInfo">Просмотреть информацию</a></td>
           <td>${mark.getMark()}</td>
         </tr>

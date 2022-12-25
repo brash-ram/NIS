@@ -27,6 +27,7 @@ public class CommandConfig {
             Map.entry(Route.TRIPS_INFO, new TripsInfoCommand()),
             Map.entry(Route.DELETE_TRIP, new DeleteTripCommand()),
             Map.entry(Route.COMPLETE_TRIP, new CompleteTripCommand()),
+            Map.entry(Route.PASSENGER_LIST, new PassengerListCommand()),
 
             Map.entry(Route.PASSENGER_PROFILE, new PassengerProfileCommand()),
             Map.entry(Route.CREATE_REQUEST, new CreateRequestCommand()),
@@ -81,6 +82,7 @@ public class CommandConfig {
             Route.USER_LIST,
             Route.MODER_PROFILE,
             Route.TRIP_LIST,
+            Route.PASSENGER_LIST,
             Route.REQUEST_LIST,
             Route.CREATE_MARK
     );

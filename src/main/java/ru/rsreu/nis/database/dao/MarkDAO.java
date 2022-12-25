@@ -9,6 +9,7 @@ public interface MarkDAO {
     List<Mark> findAllByToUser(Integer toUserId);
     Mark findMarkById(Integer id);
     Mark findMarkByTripAndFromUser(Integer tripId, Integer fromUser);
+    List<Mark> findAllMarkByTripAndToUser(Integer tripId, Integer toUser);
     void update(Mark mark);
     void delete(Integer markId);
     void save(Mark mark);

@@ -24,6 +24,7 @@ public class CreateMarkCommand extends FrontCommand {
     public void send() throws ServletException, IOException {
         String mark = request.getParameter(RequestParam.MARk);
         String tripId = request.getParameter(RequestParam.TRIP_ID);
-        markService.createMark(mark, Integer.valueOf(tripId), user);
+        String toUserId = request.getParameter(RequestParam.USER_ID);
+        markService.createMark(mark, Integer.valueOf(tripId), user, Integer.valueOf(toUserId));
     }
 }

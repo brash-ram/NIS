@@ -43,7 +43,13 @@
                         <td>${trip.price}</td>
                         <td>${trip.freeSeats}</td>
                         <td>${trip.tripStatus.getRussianName()}</td>
-                        <td></td>
+                        <td>
+                            <div class="w-full flex items-center justify-center space-x-2">
+                                <button class="text-gray-700 hover:text-gray-900" onclick="passengerList(${trip.tripId})">
+                                    <span class="material-symbols-outlined">visibility</span>
+                                </button>
+                            </div>
+                        </td>
                         <td>
                             <div class="w-full flex items-center justify-center space-x-2">
                                 <c:if test="${!trip.tripStatus.equals(TripStatus.COMPLETED)}">

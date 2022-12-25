@@ -9,6 +9,7 @@ public enum Jsp {
     TRIP_PARAMETERS("/jsp/tripParameters.jsp"),
     CERTAIN_TRIP_REQUESTS("/jsp/driver/certainTripRequests.jsp"),
     TRIPS_INFO("/jsp/driver/tripsInfo.jsp"),
+    PASSENGER_LIST("/jsp/driver/passengerList.jsp"),
 
 
     PASSENGER_PROFILE("/jsp/passenger/passengerProfile.jsp"),

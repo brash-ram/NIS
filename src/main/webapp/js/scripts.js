@@ -106,6 +106,15 @@ $(document).ready(() => {
     });
 });
 
+function passengerList(tripId) {
+    // $.get("passengerList", {trip_id: tripId}, function () {
+    //     console.log("passengerList");
+    // }).fail(function () {
+    //     console.log("passengerList error!");
+    // });
+    redirect('passengerList',{trip_id: tripId});
+}
+
 // $(document).ready(function () {
 //     $('#ALL').click(function () {
 //         redirect('userList',{status: "ALL"});

@@ -34,6 +34,7 @@ public enum Route {
     COMPLETE_TRIP("/completeTrip"),
     MY_REQUESTS("/my_requests"),
     CREATE_MARK("/createMark"),
+    PASSENGER_LIST("/passengerList"),
     NOT_FOUND("404");
 
     private final String route;
