@@ -12,5 +12,5 @@ public interface UserDAO {
     User findUserByLogin(String login);
     Optional<User> updateUser(User user);
     void deleteUser(User user);
-    Optional<User> save(User user);
+    void save(User user);
 }

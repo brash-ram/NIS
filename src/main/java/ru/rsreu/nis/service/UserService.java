@@ -32,4 +32,7 @@ public class UserService {
     public List<User> getAllUsers() {
         return userDAO.findAll();
     }
+
+    public void save(User user) {userDAO.save(user);
+    }
 }
