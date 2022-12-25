@@ -7,6 +7,7 @@ import java.util.List;
 public interface TripDAO {
     List<Trip> findAll();
     List<Trip> findAllByDriver(Integer driverId);
+    List<Trip> findAllByNoPassenger(Integer passengerId);
     Trip findTripById(Integer id);
     Trip findTripById(String id);
     void update(Trip trip);

@@ -14,4 +14,5 @@ public class RequestParam {
     public static final String PRICE = "price";
 
     public static final String STATUS = "status";
+    public static final String TRIP_ID = "trip_id";
 }

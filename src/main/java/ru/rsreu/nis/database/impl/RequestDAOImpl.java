@@ -50,7 +50,7 @@ public class RequestDAOImpl extends AbstractDAO implements RequestDAO {
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, request.getPassenger().getUserId());
             statement.setInt(2, request.getTrip().getTripId());
-            statement.setString(2, request.getRequestStatus().toString());
+            statement.setString(3, request.getRequestStatus().toString());
 
             statement.executeUpdate();
         } catch (SQLException e) {

@@ -29,4 +29,8 @@ public class RequestService {
     public List<Request> getAllRequestsByDriver(Integer driverId) {
         return requestDAO.findAllByDriver(driverId);
     }
+
+    public void createRequest(Request request) {
+        requestDAO.save(request);
+    }
 }

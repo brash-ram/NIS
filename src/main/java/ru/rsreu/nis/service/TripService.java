@@ -27,4 +27,8 @@ public class TripService {
 
     public List<Trip> findAll() {return tripDAO.findAll();}
     public List<Trip> findAllByDriver(Integer driverId) {return tripDAO.findAllByDriver(driverId);}
+
+    public List<Trip> getAllTripsByNotPassenger(Integer passengerId) {
+        return tripDAO.findAllByNoPassenger(passengerId);
+    }
 }

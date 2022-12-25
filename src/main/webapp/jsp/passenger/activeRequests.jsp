@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,11 @@
     <style>
         <%@include file="../../css/style.css" %>
     </style>
+    <script
+            src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+            crossorigin="anonymous">
+    </script>
 </head>
 <body>
 <div class="tripRequests">
@@ -33,7 +39,7 @@
                         <td>${trip.getTripStatus()}</td>
                         <td>
                             <div class="w-full flex items-center justify-center space-x-2">
-                                <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="">
+                                <button class="text-gray-700 hover:text-gray-900"onclick="">
                                     <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
@@ -47,7 +53,7 @@
         </div>
     </div>
 </div>
-</div>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/scripts.js"></script>
 </body>
 </html>
 

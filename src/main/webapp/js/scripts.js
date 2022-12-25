@@ -28,6 +28,15 @@ function changeUser(userId) {
     window.location.reload();
 }
 
+function createRequest(tripId) {
+    $.post("createRequest", {trip_id: tripId}, function () {
+        console.log("createRequest");
+    }).fail(function () {
+        console.log("createRequest error!");
+    });
+    window.location.reload();
+}
+
 $(document).ready(function () {
     $('#ALL').click(function () {
         redirect('userList',{status: "ALL"});

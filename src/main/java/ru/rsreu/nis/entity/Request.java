@@ -13,4 +13,10 @@ public class Request {
     private User passenger;
     private Trip trip;
     private RequestStatus requestStatus;
+
+    public Request(User passenger, Trip trip, RequestStatus requestStatus) {
+        this.passenger = passenger;
+        this.trip = trip;
+        this.requestStatus = requestStatus;
+    }
 }
