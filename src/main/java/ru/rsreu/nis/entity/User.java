@@ -21,6 +21,16 @@ public class User implements Principal {
     private String lastName;
     private Roles userRole;
 
+    public User(String login, String password, UserStatus userStatus,
+                String firstName, String lastName, Roles userRole) {
+        this.login = login;
+        this.password = password;
+        this.userStatus = userStatus;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userRole = userRole;
+    }
+
     @Override
     public boolean implies(Subject subject) {
         return Principal.super.implies(subject);

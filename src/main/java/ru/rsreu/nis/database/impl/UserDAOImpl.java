@@ -106,38 +106,21 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
-    public Optional<User> save(User user) {
+    public void save(User user) {
         String query = resourcer.getString("user.save");
-        String[] returnId = {"id"};
 
-        try (PreparedStatement st = connection.prepareStatement(query, returnId)) {
+        try (PreparedStatement st = connection.prepareStatement(query)) {
             st.setString(1, user.getLogin());
             st.setString(2, user.getPassword());
-            st.setString(3, user.getFirstName());
-            st.setString(4, user.getLastName());
-            st.setString(5, user.getUserStatus().toString());
+            st.setString(3, user.getUserStatus().toString());
+            st.setString(4, user.getFirstName());
+            st.setString(5, user.getLastName());
             st.setString(6, user.getUserRole().toString());
 
-            int affectedRows = st.executeUpdate();
-
-            if (affectedRows == 0) {
-                return Optional.empty();
-            }
-
-            try (ResultSet generatedKeys = st.getGeneratedKeys()) {
-                if (generatedKeys.next()) {
-                    int id = generatedKeys.getInt(1);
-
-                    user.setUserId(id);
-
-                    return Optional.of(user);
-                }
-            }
+            st.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        return Optional.empty();
     }
 
     public static UserDAOImpl getInstance() {

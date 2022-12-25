@@ -21,6 +21,7 @@
                 <th>Дата поездки</th>
                 <th>Цена поездки, руб.</th>
                 <th>Статус</th>
+                <th>Действие</th>
             </tr>
             </thead>
             <tbody>
@@ -31,6 +32,16 @@
                         <td>${trip.tripDate}</td>
                         <td>${trip.price}</td>
                         <td>${trip.tripStatus.getRussianName()}</td>
+                        <td>
+                            <div class="w-full flex items-center justify-center space-x-2">
+                                <button class="text-gray-700 hover:text-gray-900" onclick="comleteTrip(${request.requestId})">
+                                    <span class="material-symbols-outlined">check</span>
+                                </button>
+                                <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="deleteTrip(${trip.tripId})">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                 </c:forEach>
             </tbody>

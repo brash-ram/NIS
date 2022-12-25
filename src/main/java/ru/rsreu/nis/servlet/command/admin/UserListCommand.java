@@ -2,6 +2,7 @@ package ru.rsreu.nis.servlet.command.admin;
 
 import ru.rsreu.nis.constant.RequestAttribute;
 import ru.rsreu.nis.constant.RequestParam;
+import ru.rsreu.nis.dto.UserListResponseDTO;
 import ru.rsreu.nis.entity.Session;
 import ru.rsreu.nis.entity.User;
 import ru.rsreu.nis.entity.enums.SessionStatus;
@@ -33,7 +34,8 @@ public class UserListCommand extends FrontCommand {
 
     @Override
     public void process() throws ServletException, IOException {
-        List<Session> sessions = sessionService.getAllSessions();
+        List<UserListResponseDTO> sessions = sessionService.getAllUserList(user);
+        request.setAttribute(RequestAttribute.ROLE, user.getUserRole());
         request.setAttribute(RequestAttribute.SESSIONS, sessions);
         forward(Jsp.USER_LIST);
     }

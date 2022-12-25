@@ -7,6 +7,10 @@ public class RequestParam {
     public static final String PASSWORD = "password";
     public static final String IS_BLOCKED = "is_blocked";
     public static final String ROLE = "role";
+
+    public static final String FIRST_NAME = "first_name";
+
+    public static final String LAST_NAME = "last_name";
     public static final String START_POINT = "start-point";
     public static final String FINAL_POINT = "final-point";
     public static final String DATE = "date";

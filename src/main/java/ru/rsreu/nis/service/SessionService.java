@@ -3,13 +3,17 @@ package ru.rsreu.nis.service;
 import lombok.RequiredArgsConstructor;
 import ru.rsreu.nis.database.DAOFactory;
 import ru.rsreu.nis.database.dao.SessionDAO;
+import ru.rsreu.nis.dto.UserListResponseDTO;
 import ru.rsreu.nis.entity.Session;
 import ru.rsreu.nis.entity.User;
+import ru.rsreu.nis.entity.enums.SessionStatus;
 import ru.rsreu.nis.entity.enums.UserStatus;
+import ru.rsreu.nis.utils.SessionUtil;
 
 import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static ru.rsreu.nis.constant.GlobalOptions.SESSION_TIME_LIVE;
 
@@ -56,6 +60,18 @@ public class SessionService {
 
     public List<Session> getAllSessions() {
         return sessionDAO.findAll();
+    }
+
+    public List<UserListResponseDTO> getAllUserList(User user) {
+        List<Session> sessions = this.getAllSessions();
+        return sessions.stream().map(session -> new UserListResponseDTO(
+                session.getSession_id(),
+                session.getUser(),
+                session.getActiveUntil(),
+                session.getActiveUntil() != null && SessionUtil.checkValid(session) ?
+                SessionStatus.AUTHORIZED : SessionStatus.NOT_AUTHORIZED
+    )).filter(userListResponseDTO -> !userListResponseDTO.getUser().getUserId().equals(user.getUserId()))
+                .collect(Collectors.toList());
     }
     public List<Session> getAllSessionsByUserStatus(String userStatus) {
         return sessionDAO.findAll();

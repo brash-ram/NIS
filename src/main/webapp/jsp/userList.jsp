@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="ru.rsreu.nis.entity.enums.Roles" %>
+<%@ page import="ru.rsreu.nis.entity.enums.UserStatus" %>
 <html>
 <head>
     <title>Список пользователей</title>
@@ -33,44 +35,42 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="sessionInstance" items="${sessions}">
+                <c:forEach var="session" items="${sessions}">
                 <tr>
-                    <td>${sessionInstance.getUser().getLastName()}</td>
-                    <td>${sessionInstance.getUser().getFirstName()}</td>
-                    <td>${sessionInstance.getUser().userStatus.getRussianName()}</td>
-                    <td>${sessionInstance.getUser().userRole.getRussianName()}</td>
-                    <td>${sessionInstance.status.getRussianName()}</td>
+                    <td>${session.getUser().getLastName()}</td>
+                    <td>${session.getUser().getFirstName()}</td>
+                    <td>${session.getUser().userStatus.getRussianName()}</td>
+                    <td>${session.getUser().userRole.getRussianName()}</td>
+                    <td>${session.status.getRussianName()}</td>
                     <td>
-                        <c:choose>
-                            <c:when test="${session.getUser().getUserRole().equals(Roles.ADMIN)}">
+                        <c:if test="${role.equals(Roles.ADMIN)}">
+                            <div class="w-full flex items-center justify-center space-x-2">
+                                <button class="text-gray-700 hover:text-gray-900" name="submit"
+                                        onclick="deleteUser(${session.getUser().getUserId()})">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                                <button class="text-gray-700 hover:text-gray-900" name="submit"
+                                        onclick="changeUser(${session.getUser().getUserId()})">
+                                    <span class="material-symbols-outlined">edit</span>
+                                </button>
+                            </div>
+                        </c:if>
+                        <c:if test="${role.equals(Roles.MODERATOR)}">
+                            <c:if test="${session.getUser().getUserStatus().equals(UserStatus.NOT_BLOCKED)}">
                                 <div class="w-full flex items-center justify-center space-x-2">
-                                    <button class="text-gray-700 hover:text-gray-900" name="submit"
-                                            onclick="deleteUser(${session.getUser().getUserId()})">
-                                        <span class="material-symbols-outlined">delete</span>
-                                    </button>
-                                    <button class="text-gray-700 hover:text-gray-900" name="submit"
-                                            onclick="changeUser(${session.getUser().getUserId()})">
-                                        <span class="material-symbols-outlined">edit</span>
+                                    <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="blockUser(${session.user.userId})">
+                                        <span class="material-symbols-outlined">lock</span>
                                     </button>
                                 </div>
-                            </c:when>
-                            <c:when test="${session.getUser().getUserRole().equals(Roles.MODER)}">
-                                <c:when test="${session.getUser().getUserStatus().equals(UserStatus.NOT_BLOCKED)}">
-                                    <div class="w-full flex items-center justify-center space-x-2">
-                                        <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="">
-                                            <span class="material-symbols-outlined">lock</span>
-                                        </button>
-                                    </div>
-                                </c:when>
-                                <c:when test="${session.getUser().getUserStatus().equals(UserStatus.BLOCKED)}">
-                                    <div class="w-full flex items-center justify-center space-x-2">
-                                        <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="">
-                                            <span class="material-symbols-outlined">lock_open</span>
-                                        </button>
-                                    </div>
-                                </c:when>
-                            </c:when>
-                        </c:choose>
+                            </c:if>
+                            <c:if test="${session.getUser().getUserStatus().equals(UserStatus.BLOCKED)}">
+                                <div class="w-full flex items-center justify-center space-x-2">
+                                    <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="unblockUser(${session.user.userId})">
+                                        <span class="material-symbols-outlined">lock_open</span>
+                                    </button>
+                                </div>
+                            </c:if>
+                        </c:if>
                     </td>
                 </tr>
                 </c:forEach>
