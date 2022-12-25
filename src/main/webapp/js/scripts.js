@@ -1,14 +1,28 @@
-$("#ALL").click(function(){
-    $.post("userList", {status: "ALL"}, function () {})
-    window.location.reload();
-});
+function redirect(path, query) {
+    const url = [
+        window.location.origin,
+        'nis',
+        path
+    ].join('/');
 
-$("#AUTHORIZED").click(function(){
-    $.post("userList", {status: "AUTHORIZED"}, function () {})
-    window.location.reload();
-});
+    const queryParams = query ? `?${new URLSearchParams(query).toString()}` : ''
 
-$("#BLOCKED").click(function(){
-    $.post("userList", {status: "BLOCKED"}, function () {})
-    window.location.reload();
+    window.location.href = url + queryParams;
+}
+
+$(document).ready(function () {
+    $('#ALL').click(function () {
+        redirect('userList',{status: "ALL"});
+    });
+    // $.post('deleteUser', {}, function () {
+    //     window.location.reload();
+    // })
+
+    $('#AUTHORIZED').click(function () {
+        redirect('userList',{status: "AUTHORIZED"});
+    });
+
+    $('#BLOCKED').click(function () {
+        redirect('userList',{status: "BLOCKED"});
+    });
 });

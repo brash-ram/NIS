@@ -1,20 +1,14 @@
 package ru.rsreu.nis.entity.enums;
 
 public enum SessionStatus {
-    AUTHORIZED("AUTHORIZED"),
-    NOT_AUTHORIZED("NOT_AUTHORIZED");
+    AUTHORIZED("Авторизован"),
+    NOT_AUTHORIZED( "Не авторизован");
+    private String name;
 
-    private String  status;
-
-    SessionStatus(String status) {
-        this.status = status;
+    SessionStatus(String name) {
+        this.name = name;
     }
-
     public String getRussianName() {
-        switch (status) {
-            case "AUTHORIZED": return "Авторизован";
-            case "NOT_AUTHORIZED": return "Не авторизован";
-        }
-        return null;
+        return name;
     }
 }

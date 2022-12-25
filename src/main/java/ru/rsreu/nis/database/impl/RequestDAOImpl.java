@@ -24,6 +24,26 @@ public class RequestDAOImpl extends AbstractDAO implements RequestDAO {
     }
 
     @Override
+    public List<Request> findAllByDriver(Integer driverId) {
+        String query = resourcer.getString("request.find.all.driver");
+        List<Request> requests = new ArrayList<>();
+
+        try (PreparedStatement st = connection.prepareStatement(query)) {
+            st.setInt(1, driverId);
+
+            ResultSet resultSet = st.executeQuery();
+
+            while (resultSet.next()) {
+                requests.add(DAOMapper.mapRequest(resultSet));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return requests;
+    }
+
+    @Override
     public void save(Request request) {
         String query = resourcer.getString("request.save");
 

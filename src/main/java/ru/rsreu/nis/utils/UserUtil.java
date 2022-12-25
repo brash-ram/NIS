@@ -19,6 +19,10 @@ public class UserUtil {
         return Optional.ofNullable(user);
     }
 
+    public static User tryGetFromRequest(HttpServletRequest request) {
+        return getFromRequest(request).orElseThrow(RuntimeException::new);
+    }
+
     public static Cookie createUserCookie(User user) {
         Cookie cookie = new Cookie(USER_ID, user.getUserId().toString());
 

@@ -33,25 +33,7 @@ public class UserListCommand extends FrontCommand {
 
     @Override
     public void process() throws ServletException, IOException {
-        List<Session> sessions = null;
-        String status = request.getParameter(RequestParam.STATUS);
-        if (status != null) {
-            if (status.equals("BLOCKED")) {
-                sessions = sessionService.getAllSessionsByUserStatus(status);
-            } else if (status.equals("AUTHORIZED")) {
-                sessions = sessionService.getAllSessions();
-            }
-        } else {
-            sessions = sessionService.getAllSessions();
-        }
-        sessions = sessions.stream().peek(session -> {
-            if (session.getActiveUntil() != null && SessionUtil.checkValid(session)) {
-                session.setStatus(SessionStatus.AUTHORIZED);
-            } else {
-                session.setStatus(SessionStatus.NOT_AUTHORIZED);
-            }
-        }).collect(Collectors.toList());
-
+        List<Session> sessions = sessionService.getAllSessions();
         request.setAttribute(RequestAttribute.SESSIONS, sessions);
         forward(Jsp.USER_LIST);
     }

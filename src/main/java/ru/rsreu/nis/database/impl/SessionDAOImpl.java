@@ -7,10 +7,7 @@ import ru.rsreu.nis.entity.User;
 import ru.rsreu.nis.mapper.DAOMapper;
 import ru.rsreu.nis.resourcer.ProjectResourcer;
 
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -68,7 +65,7 @@ public class SessionDAOImpl extends AbstractDAO implements SessionDAO {
 
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setLong(1, session.getUser().getUserId());
-            statement.setDate(2, new Date(session.getActiveUntil().getTime()));
+            statement.setTimestamp(2, new Timestamp(session.getActiveUntil().getTime()));
 
             statement.executeUpdate();
         } catch (SQLException e) {

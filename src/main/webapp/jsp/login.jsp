@@ -14,7 +14,7 @@
           <input type="text" name="login" placeholder="Введите логин">
           <input type="password" name="password" placeholder="Введите пароль">
         </div>
-        <input class="submit" type="submit" name="submit" value="ВОЙТИ">
+        <button class="submit">Войти</button>
       </form>
     </div>
   </body>

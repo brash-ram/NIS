@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Одобрение пассажира для поездки</title>
@@ -24,22 +25,24 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Рязань</td>
-                    <td>Москва</td>
-                    <td>12.12.2012</td>
-                    <td><a href="/nis/userInfo">Просмотр информации о пассажире</a></td>
-                    <td>
-                        <div class="w-full flex items-center justify-center space-x-2">
-                            <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="">
-                                <span class="material-symbols-outlined">check</span>
-                            </button>
-                            <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="">
-                                <span class="material-symbols-outlined">close</span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
+                    <c:forEach var="trip" items="${trips}">
+                        <tr>
+                            <td>${trip.startPoint}</td>
+                            <td>${trip.finishPoint}</td>
+                            <td>${trip.tripDate}</td>
+                            <td><a href="/nis/userInfo">Просмотр информации о пассажире</a></td>
+                            <td>
+                                <div class="w-full flex items-center justify-center space-x-2">
+                                    <button class="text-gray-700 hover:text-gray-900" onclick="approvePassenger()">
+                                        <span class="material-symbols-outlined">check</span>
+                                    </button>
+                                    <button class="text-gray-700 hover:text-gray-900" onclick="">
+                                        <span class="material-symbols-outlined">close</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </c:forEach>
                 </tbody>
             </table>
         </div>
