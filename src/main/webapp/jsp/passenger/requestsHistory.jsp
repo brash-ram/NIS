@@ -19,14 +19,13 @@
 <div class="tripRequests">
     <div class="tripRequests-container">
         <div class="tripRequests-inner">
-            <div class="table-title title">Активные заявки</div><br>
+            <div class="table-title title">История заявок</div><br>
             <table class="table">
                 <thead>
                 <tr>
                     <th>Начальная точка</th>
                     <th>Конечная точка</th>
                     <th>Дата поездки</th>
-                    <th>Количество свободных мест</th>
                     <th>Цена поездки, руб.</th>
                     <th>Статус заявки</th>
                     <th>Водитель</th>
@@ -39,7 +38,6 @@
                         <td>${request.trip.getStartPoint()}</td>
                         <td>${request.trip.getFinalPoint()}</td>
                         <td>${request.trip.getTripDate()}</td>
-                        <td>${request.trip.getFreeSeats()}</td>
                         <td>${request.trip.getPrice()}</td>
                         <td>${request.requestStatus.getRussianName()}</td>
                         <td></td>

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="ru.rsreu.nis.entity.enums.TripStatus" %>
 <html>
 <head>
     <title>Информация о поездках</title>
@@ -45,9 +46,11 @@
                         <td></td>
                         <td>
                             <div class="w-full flex items-center justify-center space-x-2">
-                                <button class="text-gray-700 hover:text-gray-900" onclick="completeTrip(${trip.tripId})">
-                                    <span class="material-symbols-outlined">check</span>
-                                </button>
+                                <c:if test="${!trip.tripStatus.equals(TripStatus.COMPLETED)}">
+                                    <button class="text-gray-700 hover:text-gray-900" onclick="completeTrip(${trip.tripId})">
+                                        <span class="material-symbols-outlined">check</span>
+                                    </button>
+                                </c:if>
                                 <button class="text-gray-700 hover:text-gray-900" onclick="deleteTrip(${trip.tripId})">
                                     <span class="material-symbols-outlined">delete</span>
                                 </button>

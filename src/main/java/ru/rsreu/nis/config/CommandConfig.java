@@ -32,6 +32,7 @@ public class CommandConfig {
             Map.entry(Route.CREATE_REQUEST, new CreateRequestCommand()),
             Map.entry(Route.RATE_DRIVER, new RateDriverCommand()),
             Map.entry(Route.ACTIVE_REQUESTS, new ActiveRequestsCommand()),
+            Map.entry(Route.REQUESTS_HISTORY, new RequestsHistoryCommand()),
 
             Map.entry(Route.ADMIN_PROFILE, new AdminProfileCommand()),
             Map.entry(Route.ADD_USER, new AddUserCommand()),
@@ -72,6 +73,7 @@ public class CommandConfig {
             Route.CREATE_REQUEST,
             Route.RATE_DRIVER,
             Route.ACTIVE_REQUESTS,
+            Route.REQUESTS_HISTORY,
             Route.ADMIN_PROFILE,
             Route.ADD_USER,
             Route.USER_LIST,

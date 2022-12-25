@@ -3,7 +3,10 @@ package ru.rsreu.nis.service;
 import lombok.RequiredArgsConstructor;
 import ru.rsreu.nis.database.DAOFactory;
 import ru.rsreu.nis.database.dao.RequestDAO;
+import ru.rsreu.nis.database.dao.TripDAO;
 import ru.rsreu.nis.entity.Request;
+import ru.rsreu.nis.entity.Trip;
+import ru.rsreu.nis.entity.enums.RequestStatus;
 import ru.rsreu.nis.entity.enums.TripStatus;
 
 import java.util.List;
@@ -12,11 +15,12 @@ import java.util.List;
 public class RequestService {
     private static RequestService instance;
     private final RequestDAO requestDAO;
+    private final TripDAO tripDAO;
 
     public static RequestService getInstance() {
         synchronized (RequestService.class) {
             if (instance == null) {
-                instance = new RequestService(DAOFactory.getRequestDAO());
+                instance = new RequestService(DAOFactory.getRequestDAO(), DAOFactory.getTripDAO());
             }
         }
         return instance;
@@ -33,6 +37,11 @@ public class RequestService {
     }
 
     public void deleteRequest(Integer requestId) {
+        Request request = requestDAO.findById(requestId);
+        if (request.getRequestStatus().equals(RequestStatus.APPROVED) && !request.getTrip().getTripStatus().equals(TripStatus.COMPLETED)) {
+            Trip trip = request.getTrip();
+            tripDAO.update(trip.setFreeSeats(trip.getFreeSeats()+1));
+        }
         requestDAO.delete(requestId);
     }
 
@@ -50,5 +59,12 @@ public class RequestService {
 
     public List<Request> getAllRequestsByPassengerHistory(Integer passengerId) {
         return requestDAO.findAllByPassengerAndTripStatus(passengerId, TripStatus.COMPLETED);
+    }
+
+    public void approvePassenger(Integer requestId) {
+        Request request = requestDAO.findById(requestId);
+        Trip trip = request.getTrip();
+        tripDAO.update(trip.setFreeSeats(trip.getFreeSeats()-1));
+        requestDAO.update(request.setRequestStatus(RequestStatus.APPROVED));
     }
 }
