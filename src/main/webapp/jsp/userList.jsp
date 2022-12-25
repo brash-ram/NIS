@@ -58,14 +58,14 @@
                         <c:if test="${role.equals(Roles.MODERATOR)}">
                             <c:if test="${session.getUser().getUserStatus().equals(UserStatus.NOT_BLOCKED)}">
                                 <div class="w-full flex items-center justify-center space-x-2">
-                                    <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="blockUser(${session.user.userId})">
+                                    <button class="text-gray-700 hover:text-gray-900" onclick="blockUser(${session.getUser().getUserId()})">
                                         <span class="material-symbols-outlined">lock</span>
                                     </button>
                                 </div>
                             </c:if>
                             <c:if test="${session.getUser().getUserStatus().equals(UserStatus.BLOCKED)}">
                                 <div class="w-full flex items-center justify-center space-x-2">
-                                    <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="unblockUser(${session.user.userId})">
+                                    <button class="text-gray-700 hover:text-gray-900" onclick="unblockUser(${session.getUser().getUserId()})">
                                         <span class="material-symbols-outlined">lock_open</span>
                                     </button>
                                 </div>

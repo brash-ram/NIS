@@ -11,7 +11,7 @@ function redirect(path, query) {
 }
 
 function deleteUser(userId) {
-    $.post("deleteUser", {userId: userId}, function () {
+    $.post("deleteUser", {user_id: userId}, function () {
         console.log("deleteUser");
     }).fail(function () {
         console.log("deleteUser error!");
@@ -20,7 +20,7 @@ function deleteUser(userId) {
 }
 
 function changeUser(userId) {
-    $.post("changeUser", {userId: userId}, function () {
+    $.post("changeUser", {user_dd: userId}, function () {
         console.log("deleteUser");
     }).fail(function () {
         console.log("deleteUser error!");
@@ -60,6 +60,33 @@ function disapprovePassenger(requestId) {
         console.log("disapprovePassenger");
     }).fail(function () {
         console.log("disapprovePassenger error!");
+    });
+    window.location.reload();
+}
+
+function completeTrip(tripId) {
+    $.post("completeTrip", {trip_id: tripId}, function () {
+        console.log("completeTrip");
+    }).fail(function () {
+        console.log("completeTrip error!");
+    });
+    window.location.reload();
+}
+
+function blockUser(userId) {
+    $.post("blockUser", {user_id: userId}, function () {
+        console.log("blockUser");
+    }).fail(function () {
+        console.log("blockUser error!");
+    });
+    window.location.reload();
+}
+
+function unblockUser(userId) {
+    $.post("unblockUser", {user_id: userId}, function () {
+        console.log("unblockUser");
+    }).fail(function () {
+        console.log("unblockUser error!");
     });
     window.location.reload();
 }

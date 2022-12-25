@@ -9,8 +9,7 @@ public interface TripDAO {
     List<Trip> findAllByDriver(Integer driverId);
     List<Trip> findAllByNoPassenger(Integer passengerId);
     Trip findTripById(Integer id);
-    Trip findTripById(String id);
     void update(Trip trip);
-    void delete(Trip trip);
+    void delete(Integer tripId);
     void save(Trip trip);
 }

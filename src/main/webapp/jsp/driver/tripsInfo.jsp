@@ -3,10 +3,17 @@
 <html>
 <head>
     <title>Информация о поездках</title>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.5/dist/flowbite.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <style>
         <%@include file="../../css/style.css" %>
     </style>
+    <script
+            src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+            crossorigin="anonymous">
+    </script>
 </head>
 <body>
 <div class="tripsInfo">
@@ -20,7 +27,9 @@
                 <th>Конечная точка</th>
                 <th>Дата поездки</th>
                 <th>Цена поездки, руб.</th>
+                <th>Количество мест</th>
                 <th>Статус</th>
+                <th>Пассажиры</th>
                 <th>Действие</th>
             </tr>
             </thead>
@@ -31,13 +40,15 @@
                         <td>${trip.finalPoint}</td>
                         <td>${trip.tripDate}</td>
                         <td>${trip.price}</td>
+                        <td>${trip.freeSeats}</td>
                         <td>${trip.tripStatus.getRussianName()}</td>
+                        <td></td>
                         <td>
                             <div class="w-full flex items-center justify-center space-x-2">
-                                <button class="text-gray-700 hover:text-gray-900" onclick="comleteTrip(${request.requestId})">
+                                <button class="text-gray-700 hover:text-gray-900" onclick="completeTrip(${trip.tripId})">
                                     <span class="material-symbols-outlined">check</span>
                                 </button>
-                                <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="deleteTrip(${trip.tripId})">
+                                <button class="text-gray-700 hover:text-gray-900" onclick="deleteTrip(${trip.tripId})">
                                     <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
@@ -49,6 +60,6 @@
     </div>
 </div>
 </div>
-</div>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/scripts.js"></script>
 </body>
 </html>

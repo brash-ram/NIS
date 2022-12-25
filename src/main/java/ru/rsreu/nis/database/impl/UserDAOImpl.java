@@ -16,6 +16,7 @@ import java.util.Optional;
 public class UserDAOImpl extends AbstractDAO implements UserDAO {
 
     private static UserDAOImpl instance;
+
     @Override
     public List<User> findAll() {
         String query = resourcer.getString("user.find.all");
@@ -70,7 +71,7 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
-    public Optional<User> updateUser(User user) {
+    public Optional<User> update(User user) {
         String query = resourcer.getString("user.update");
 
         try (PreparedStatement st = connection.prepareStatement(query)) {
@@ -93,7 +94,7 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
-    public void deleteUser(User user) {
+    public void delete(User user) {
         String query = resourcer.getString("query.user.delete");
 
         try (PreparedStatement st = connection.prepareStatement(query)) {

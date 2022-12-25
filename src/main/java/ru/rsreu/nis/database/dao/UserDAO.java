@@ -10,7 +10,7 @@ public interface UserDAO {
     List<User> findAll();
     User findUserById(Integer id);
     User findUserByLogin(String login);
-    Optional<User> updateUser(User user);
-    void deleteUser(User user);
+    Optional<User> update(User user);
+    void delete(User user);
     void save(User user);
 }

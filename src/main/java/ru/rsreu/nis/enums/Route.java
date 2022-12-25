@@ -27,9 +27,9 @@ public enum Route {
     LOGOUT("/login"),
     CHANGE_USER("/changeUser"),
     DELETE_USER("/deleteUser"),
-    BLOCK_USER("blockPassenger"),
-    UNBLOCK_USER("/unblockPassenger"),
-    DELETE_TRIP("deleteTrip"),
+    BLOCK_USER("/blockUser"),
+    UNBLOCK_USER("/unblockUser"),
+    DELETE_TRIP("/deleteTrip"),
     COMPLETE_TRIP("/completeTrip"),
     MY_REQUESTS("/my_requests"),
     NOT_FOUND("404");

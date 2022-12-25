@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import ru.rsreu.nis.database.DAOFactory;
 import ru.rsreu.nis.database.dao.UserDAO;
 import ru.rsreu.nis.entity.User;
+import ru.rsreu.nis.entity.enums.UserStatus;
 
 import java.util.List;
 
@@ -26,13 +27,28 @@ public class UserService {
     }
 
     public User getUser(Integer id) {
-        return userDAO.findUserById(4);
+        return userDAO.findUserById(id);
     }
 
     public List<User> getAllUsers() {
         return userDAO.findAll();
     }
 
-    public void save(User user) {userDAO.save(user);
+    public void save(User user) {
+        userDAO.save(user);
+    }
+
+    public void updateUser(User user) {
+        userDAO.update(user);
+    }
+
+    public void blockUser(Integer userId) {
+        User user = this.getUser(userId);
+        this.updateUser(user.setUserStatus(UserStatus.BLOCKED));
+    }
+
+    public void unblockUser(Integer userId) {
+        User user = this.getUser(userId);
+        this.updateUser(user.setUserStatus(UserStatus.NOT_BLOCKED));
     }
 }

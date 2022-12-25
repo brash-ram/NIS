@@ -8,6 +8,11 @@
     <style>
         <%@include file="../../css/style.css" %>
     </style>
+    <script
+            src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+            crossorigin="anonymous">
+    </script>
 </head>
 <body>
 <div class="requestList">
@@ -23,6 +28,7 @@
                     <th>Дата поездки</th>
                     <th>Цена поездки, руб.</th>
                     <th>Статус поездки</th>
+                    <th>Статус запроса</th>
                     <th>Пассажир</th>
                     <th>Статус заявки</th>
                 </tr>
@@ -33,12 +39,13 @@
                         <td>${request.getTrip().getStartPoint()}</td>
                         <td>${request.getTrip().getFinalPoint()}</td>
                         <td>${request.getTrip().getTripDate()}</td>
-                        <td>${request.getTrip().getTripStatus}</td>
+                        <td>${request.getTrip().price}</td>
+                        <td>${request.getTrip().getTripStatus().getRussianName()}</td>
+                        <td>${request.getRequestStatus().getRussianName()}</td>
                         <td><a href="/nis/userInfo">Информация о пассажире</a></td>
-                        <td>${request.getRequestStatus()}</td>
                         <td>
                             <div class="w-full flex items-center justify-center space-x-2">
-                                <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="">
+                                <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="deleteRequest(${request.requestId})">
                                     <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
@@ -51,5 +58,6 @@
     </div>
 </div>
 </div>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/scripts.js"></script>
 </body>
 </html>

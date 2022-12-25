@@ -11,7 +11,7 @@ public enum RequestStatus {
         this.name = name;
     }
 
-    public String getName() {
+    public String getRussianName() {
         return name;
     }
 }
