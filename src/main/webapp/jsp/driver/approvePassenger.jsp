@@ -9,7 +9,6 @@
     </style>
 </head>
 <body>
-
 <div class="approvePassenger">
     <div class="approvePassenger-container">
         <div class="approvePassenger-inner">

@@ -17,7 +17,7 @@ public enum Route {
     CREATE_REQUEST("/createRequest"),
     DRIVER_MARKS("/driverMarks"),
     RATE_DRIVER("/rateDriver"),
-    TRIP_REQUESTS("/tripRequests"),
+    ACTIVE_REQUESTS("/tripRequests"),
 
     ADMIN_PROFILE("/adminProfile"),
     ADD_USER("/addUser"),
