@@ -46,6 +46,24 @@ function deleteRequest(requestId) {
     window.location.reload();
 }
 
+function approvePassenger(requestId) {
+    $.post("approvePassenger", {request_id: requestId}, function () {
+        console.log("approvePassenger");
+    }).fail(function () {
+        console.log("approvePassenger error!");
+    });
+    window.location.reload();
+}
+
+function disapprovePassenger(requestId) {
+    $.post("disapprovePassenger", {request_id: requestId}, function () {
+        console.log("disapprovePassenger");
+    }).fail(function () {
+        console.log("disapprovePassenger error!");
+    });
+    window.location.reload();
+}
+
 // $(document).ready(function () {
 //     $('#ALL').click(function () {
 //         redirect('userList',{status: "ALL"});

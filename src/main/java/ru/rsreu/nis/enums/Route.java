@@ -7,6 +7,7 @@ public enum Route {
     DRIVER_PROFILE("/driverProfile"),
     CREATE_TRIP("/createTrip"),
     APPROVE_PASSENGER("/approvePassenger"),
+    DISAPPROVE_PASSENGER("/disapprovePassenger"),
     RATE_PASSENGER("/ratePassenger"),
     TRIP_PARAMETERS("/tripParameters"),
     TRIPS_INFO("/tripsInfo"),

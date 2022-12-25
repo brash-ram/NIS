@@ -7,6 +7,8 @@ import java.util.List;
 public interface RequestDAO {
     void save(Request request);
     void delete(Integer requestId);
+    void update(Request request);
+    Request findById(Integer requestId);
     List<Request> findAll();
     List<Request> findAllByPassenger(Integer passengerId);
     List<Request> findAllByTrip(Integer tripId);
