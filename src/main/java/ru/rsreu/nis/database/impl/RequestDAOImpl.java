@@ -24,6 +24,39 @@ public class RequestDAOImpl extends AbstractDAO implements RequestDAO {
     }
 
     @Override
+    public Request findById(Integer requestId) {
+        String query = resourcer.getString("request.find.id");
+
+        try (PreparedStatement st = connection.prepareStatement(query)) {
+            st.setInt(1, requestId);
+
+            ResultSet resultSet = st.executeQuery();
+
+            while (resultSet.next()) {
+                return DAOMapper.mapRequest(resultSet);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    @Override
+    public void update(Request request) {
+        String query = resourcer.getString("request.update");
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, request.getRequestStatus().toString());
+            statement.setInt(2, request.getRequestId());
+
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public void delete(Integer requestId) {
         String query = resourcer.getString("request.delete");
 

@@ -26,6 +26,8 @@ public class RequestService {
         return requestDAO.findAll();
     }
 
+    public Request getRequest(Integer requestId) {return requestDAO.findById(requestId);}
+
     public List<Request> getAllRequestsByDriver(Integer driverId) {
         return requestDAO.findAllByDriver(driverId);
     }
@@ -35,6 +37,10 @@ public class RequestService {
 
     public void deleteRequest(Integer requestId) {
         requestDAO.delete(requestId);
+    }
+
+    public void updateRequest(Request request) {
+        requestDAO.update(request);
     }
 
     public void createRequest(Request request) {

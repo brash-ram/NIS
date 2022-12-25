@@ -8,6 +8,11 @@
     <style>
         <%@include file="../../css/style.css" %>
     </style>
+    <script
+            src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+            crossorigin="anonymous">
+    </script>
 </head>
 <body>
 <div class="approvePassenger">
@@ -25,18 +30,18 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <c:forEach var="trip" items="${trips}">
+                    <c:forEach var="request" items="${requests}">
                         <tr>
-                            <td>${trip.startPoint}</td>
-                            <td>${trip.finishPoint}</td>
-                            <td>${trip.tripDate}</td>
+                            <td>${request.trip.startPoint}</td>
+                            <td>${request.trip.finalPoint}</td>
+                            <td>${request.trip.tripDate}</td>
                             <td><a href="/nis/userInfo">Просмотр информации о пассажире</a></td>
                             <td>
                                 <div class="w-full flex items-center justify-center space-x-2">
-                                    <button class="text-gray-700 hover:text-gray-900" onclick="approvePassenger()">
+                                    <button class="text-gray-700 hover:text-gray-900" onclick="approvePassenger(${request.requestId})">
                                         <span class="material-symbols-outlined">check</span>
                                     </button>
-                                    <button class="text-gray-700 hover:text-gray-900" onclick="">
+                                    <button class="text-gray-700 hover:text-gray-900" onclick="disapprovePassenger(${request.requestId})">
                                         <span class="material-symbols-outlined">close</span>
                                     </button>
                                 </div>
@@ -50,6 +55,7 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/scripts.js"></script>
 </body>
 </html>
 
