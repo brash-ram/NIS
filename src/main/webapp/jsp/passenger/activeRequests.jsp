@@ -26,6 +26,8 @@
                     <th>Начальная точка</th>
                     <th>Конечная точка</th>
                     <th>Дата поездки</th>
+                    <th>Количество свободных мест</th>
+                    <th>Цена поездки, руб.</th>
                     <th>Статус заявки</th>
                     <th>Действия</th>
                 </tr>
@@ -36,6 +38,8 @@
                         <td>${request.trip.getStartPoint()}</td>
                         <td>${request.trip.getFinalPoint()}</td>
                         <td>${request.trip.getTripDate()}</td>
+                        <td>${request.trip.getFreeSeats()}</td>
+                        <td>${request.trip.getPrice()}</td>
                         <td>${request.requestStatus.getName()}</td>
                         <td>
                             <div class="w-full flex items-center justify-center space-x-2">

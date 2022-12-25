@@ -9,19 +9,21 @@ public enum Route {
     APPROVE_PASSENGER("/approvePassenger"),
     RATE_PASSENGER("/ratePassenger"),
     TRIP_PARAMETERS("/tripParameters"),
-    CERTAIN_TRIP_REQUESTS("/certainTripRequests"),
     TRIPS_INFO("/tripsInfo"),
-    PASSENGERS_MARKS("/passengersMarks"),
 
     PASSENGER_PROFILE("/passengerProfile"),
     CREATE_REQUEST("/createRequest"),
-    DRIVER_MARKS("/driverMarks"),
+    MARKS("/marks"),
     RATE_DRIVER("/rateDriver"),
     ACTIVE_REQUESTS("/activeRequests"),
 
     ADMIN_PROFILE("/adminProfile"),
     ADD_USER("/addUser"),
     USER_LIST("/userList"),
+
+    MODER_PROFILE("/moderProfile"),
+    TRIP_LIST("/tripList"),
+    REQUEST_LIST("/requestList"),
     LOGOUT("/login"),
     MY_REQUESTS("/my_requests"),
     NOT_FOUND("404");
