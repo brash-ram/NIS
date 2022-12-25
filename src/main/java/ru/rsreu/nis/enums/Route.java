@@ -16,6 +16,7 @@ public enum Route {
     MARKS("/marks"),
     RATE_DRIVER("/rateDriver"),
     ACTIVE_REQUESTS("/activeRequests"),
+    REQUESTS_HISTORY("/requestsHistory"),
 
     ADMIN_PROFILE("/adminProfile"),
     ADD_USER("/addUser"),

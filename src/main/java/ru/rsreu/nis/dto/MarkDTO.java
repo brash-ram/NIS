@@ -9,7 +9,8 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MarkDTO {
-    private String fullname;
+    private String startPoint;
+    private String finalPoint;
     private Date tripDate;
     private Integer mark;
 }

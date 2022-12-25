@@ -30,7 +30,7 @@
                     <a href="/nis/tripsInfo" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700">Просмотр информации о поездках</a>
                 </li>
                 <li>
-                    <a href="/nis/passengersMarks" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700">Просмотр оценок от пассажиров</a>
+                    <a href="/nis/marks" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700">Просмотр оценок от пассажиров</a>
                 </li>
                 <li>
                     <a href="/nis/login" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700" aria-current="page">Выйти из системы</a>

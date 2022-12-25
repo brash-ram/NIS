@@ -42,7 +42,16 @@
                         <td>${request.requestStatus.getRussianName()}</td>
                         <td></td>
                         <td>
-
+                            <form name = "SelectMarkForm" method="POST" action = "selectMark">
+                                <select id="selectDriverMark">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                  </select>
+                                <button class="submit">Оценить</button>
+                            </form>
                         </td>
                     </tr>
                 </c:forEach>
@@ -56,4 +65,3 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/scripts.js"></script>
 </body>
 </html>
-
