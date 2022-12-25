@@ -6,7 +6,6 @@ public enum Jsp {
     DRIVER_PROFILE("/jsp/driver/driverProfile.jsp"),
     CREATE_TRIP("/jsp/driver/createTrip.jsp"),
     APPROVE_PASSENGER("/jsp/driver/approvePassenger.jsp"),
-    RATE_PASSENGER("/jsp/driver/ratePassenger.jsp"),
     TRIP_PARAMETERS("/jsp/tripParameters.jsp"),
     CERTAIN_TRIP_REQUESTS("/jsp/driver/certainTripRequests.jsp"),
     TRIPS_INFO("/jsp/driver/tripsInfo.jsp"),

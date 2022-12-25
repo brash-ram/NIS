@@ -8,7 +8,6 @@ public enum Route {
     CREATE_TRIP("/createTrip"),
     APPROVE_PASSENGER("/approvePassenger"),
     DISAPPROVE_PASSENGER("/disapprovePassenger"),
-    RATE_PASSENGER("/ratePassenger"),
     TRIP_PARAMETERS("/tripParameters"),
     TRIPS_INFO("/tripsInfo"),
 
@@ -26,6 +25,12 @@ public enum Route {
     TRIP_LIST("/tripList"),
     REQUEST_LIST("/requestList"),
     LOGOUT("/login"),
+    CHANGE_USER("/changeUser"),
+    DELETE_USER("/deleteUser"),
+    BLOCK_USER("blockPassenger"),
+    UNBLOCK_USER("/unblockPassenger"),
+    DELETE_TRIP("deleteTrip"),
+    COMPLETE_TRIP("/completeTrip"),
     MY_REQUESTS("/my_requests"),
     NOT_FOUND("404");
 

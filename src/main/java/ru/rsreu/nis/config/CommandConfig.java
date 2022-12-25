@@ -23,9 +23,10 @@ public class CommandConfig {
             Map.entry(Route.CREATE_TRIP, new CreateTripCommand()),
             Map.entry(Route.APPROVE_PASSENGER, new ApprovePassengerCommand()),
             Map.entry(Route.DISAPPROVE_PASSENGER, new DisapprovePassengerCommand()),
-            Map.entry(Route.RATE_PASSENGER, new RatePassengerCommand()),
             Map.entry(Route.TRIP_PARAMETERS, new TripParametersCommand()),
             Map.entry(Route.TRIPS_INFO, new TripsInfoCommand()),
+            Map.entry(Route.DELETE_TRIP, new DeleteTripCommand()),
+            Map.entry(Route.COMPLETE_TRIP, new CompleteTripCommand()),
 
             Map.entry(Route.PASSENGER_PROFILE, new PassengerProfileCommand()),
             Map.entry(Route.CREATE_REQUEST, new CreateRequestCommand()),
@@ -35,10 +36,14 @@ public class CommandConfig {
             Map.entry(Route.ADMIN_PROFILE, new AdminProfileCommand()),
             Map.entry(Route.ADD_USER, new AddUserCommand()),
             Map.entry(Route.USER_LIST, new UserListCommand()),
+            Map.entry(Route.CHANGE_USER, new ChangeUserCommand()),
+            Map.entry(Route.DELETE_USER, new DeleteUserCommand()),
 
             Map.entry(Route.MODER_PROFILE, new ModerProfileCommand()),
             Map.entry(Route.TRIP_LIST, new TripListCommand()),
             Map.entry(Route.REQUEST_LIST, new RequestListCommand()),
+            Map.entry(Route.BLOCK_USER, new BlockUserCommand()),
+            Map.entry(Route.UNBLOCK_USER, new UnblockUserCommand()),
 
             Map.entry(Route.NOT_FOUND, new EmptyCommand())
     );
@@ -46,6 +51,12 @@ public class CommandConfig {
     private static final List<Route> commandRoutes = Arrays.asList(
             Route.LOGIN,
             Route.LOGOUT,
+            Route.CHANGE_USER,
+            Route.DELETE_USER,
+            Route.BLOCK_USER,
+            Route.UNBLOCK_USER,
+            Route.DELETE_TRIP,
+            Route.COMPLETE_TRIP,
             Route.MARKS,
             Route.USER_INFO,
             Route.NOT_FOUND,
@@ -55,7 +66,6 @@ public class CommandConfig {
             Route.CREATE_TRIP,
             Route.APPROVE_PASSENGER,
             Route.DISAPPROVE_PASSENGER,
-            Route.RATE_PASSENGER,
             Route.TRIP_PARAMETERS,
             Route.TRIPS_INFO,
             Route.PASSENGER_PROFILE,
