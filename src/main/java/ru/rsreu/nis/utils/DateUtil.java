@@ -2,6 +2,8 @@ package ru.rsreu.nis.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 
 public class DateUtil {
@@ -17,5 +19,9 @@ public class DateUtil {
         }
 
         return new java.sql.Date(result.getTime());
+    }
+
+    public static String  getCurrentDate() {
+        return dateFormat1.format(new Date());
     }
 }

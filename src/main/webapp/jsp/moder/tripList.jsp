@@ -8,6 +8,11 @@
     <style>
         <%@include file="../../css/style.css" %>
     </style>
+    <script
+            src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+            crossorigin="anonymous">
+    </script>
 </head>
 <body>
 <div class="tripList">
@@ -24,7 +29,6 @@
                     <th>Цена поездки, руб.</th>
                     <th>Статус поездки</th>
                     <th>Водитель</th>
-                    <th>Действие</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -35,11 +39,10 @@
                         <td>${trip.getTripDate()}</td>
                         <td>${trip.getPrice()}</td>
                         <td>${trip.getTripStatus().getRussianName()}</td>
-                        <td></td>
                         <td>
                             <div class="w-full flex items-center justify-center space-x-2">
-                                <button class="text-gray-700 hover:text-gray-900" name="submit" onclick="deleteTrip(${trip.tripId})">
-                                    <span class="material-symbols-outlined">delete</span>
+                                <button class="text-gray-700 hover:text-gray-900" onclick="userInfo(${trip.driverId})">
+                                    <span class="material-symbols-outlined">visibility</span>
                                 </button>
                             </div>
                         </td>
@@ -51,5 +54,6 @@
     </div>
 </div>
 </div>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/scripts.js"></script>
 </body>
 </html>

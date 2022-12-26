@@ -12,6 +12,7 @@ import ru.rsreu.nis.entity.User;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -52,6 +53,12 @@ public class MarkService {
 
     public List<Mark> getAllMarksByTripAndToUser(Integer tripId, Integer toUser) {
         return markDAO.findAllMarkByTripAndToUser(tripId, toUser);
+    }
+
+    public Float calculateAverageMark(Integer userId) {
+        List<Mark> marks = markDAO.findAllByToUser(userId);
+        Optional<Integer> sumMarks = marks.stream().map(Mark::getMark).reduce(Integer::sum);
+        return sumMarks.isPresent() ? sumMarks.get() / marks.size() : 0F;
     }
 
     public void createMark(String newMark, Integer tripId, User fromUser, Integer toUser) {

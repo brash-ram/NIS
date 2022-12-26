@@ -115,6 +115,10 @@ function passengerList(tripId) {
     redirect('passengerList',{trip_id: tripId});
 }
 
+function userInfo(userId) {
+    redirect('userInfo',{user_id: userId});
+}
+
 // $(document).ready(function () {
 //     $('#ALL').click(function () {
 //         redirect('userList',{status: "ALL"});

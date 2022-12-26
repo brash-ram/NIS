@@ -20,50 +20,22 @@
             <div class="userInfo-title title">Просмотр информации о пользователе</div>
             <br>
             <div class="userInfo-lastname">
-                <div class="userInfo-lastname-title">Фамилия</div>
-                <input readonly id="lastname" name="lastname" value="${user.getLastname}" class="userInfo-lastname-input">
+                <label class="userInfo-lastname-title">Фамилия</label>
+                <input disabled style="text-align:center;" id="lastname" name="lastname" value="${user_info.lastName}" class="userInfo-lastname-input">
             </div>
             <br>
             <div class="userInfo-firstname">
-                <div class="userInfo-firstname-title">Имя</div>
-                <input readonly id="firstname" name="firstname" value="${user.getFirstname}" class="userInfo-firstname-input">
+                <label class="userInfo-firstname-title">Имя</label>
+                <input disabled style="text-align:center;" id="firstname" name="firstname" value="${user_info.firstName}" class="userInfo-firstname-input">
             </div>
             <br>
             <div class="userInfo-avgMark">
-                <div class="userInfo-avgMark-title">Средняя оценка</div>
-                <input readonly id="avgMark" name="avgMark" value="${user.getAvgMark}" class="userInfo-avgMark-input">
+                <label class="userInfo-avgMark-title">Средняя оценка</label>
+                <input disabled style="text-align:center;" id="avgMark" name="avgMark" value="${user_info.averageMark}" class="userInfo-avgMark-input">
             </div>
         </div>
     </div>
 </div>
-
-<%--<div class="tripRequests">--%>
-<%--    <div class="tripRequests-container">--%>
-<%--        <div class="tripRequests-inner">--%>
-<%--            <div class="table-title title">Информация о пользователе</div>--%>
-<%--            <br>--%>
-<%--            <table class="table">--%>
-<%--                <thead>--%>
-<%--                <tr>--%>
-<%--                    <th>Фамилия</th>--%>
-<%--                    <th>Имя</th>--%>
-<%--                    <th>Средняя оценка</th>--%>
-<%--                </tr>--%>
-<%--                </thead>--%>
-<%--                <tbody>--%>
-<%--                <c:forEach var="user" items="${users}">--%>
-<%--                    <tr>--%>
-<%--                        <td>${user.lastName}</td>--%>
-<%--                        <td>${user.firstName}</td>--%>
-<%--                        <td>Cредняя оценка</td>--%>
-<%--                    </tr>--%>
-<%--                </c:forEach>--%>
-<%--                </tbody>--%>
-<%--            </table>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</div>--%>
-<%--</div>--%>
 </body>
 </html>
 

@@ -6,6 +6,7 @@ import ru.rsreu.nis.database.dao.SessionDAO;
 import ru.rsreu.nis.dto.UserListResponseDTO;
 import ru.rsreu.nis.entity.Session;
 import ru.rsreu.nis.entity.User;
+import ru.rsreu.nis.entity.enums.Roles;
 import ru.rsreu.nis.entity.enums.SessionStatus;
 import ru.rsreu.nis.entity.enums.UserStatus;
 import ru.rsreu.nis.utils.SessionUtil;
@@ -64,7 +65,8 @@ public class SessionService {
 
     public List<UserListResponseDTO> getAllUserList(User user) {
         List<Session> sessions = this.getAllSessions();
-        return sessions.stream().map(session -> new UserListResponseDTO(
+        return sessions.stream().filter(session -> !session.getUser().getUserRole().equals(Roles.ADMIN))
+                .map(session -> new UserListResponseDTO(
                 session.getSession_id(),
                 session.getUser(),
                 session.getActiveUntil(),

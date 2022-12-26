@@ -5,6 +5,7 @@
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/jsp/driver/createTrip.jsp" value="file://$PROJECT_DIR$/src/main/webapp/jsp/driver" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/jsp/login.jsp" value="file://$PROJECT_DIR$/src/main/webapp/jsp" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/jsp/moder/tripList.jsp" value="file://$PROJECT_DIR$/src/main/webapp/jsp/moder" />
       </map>
     </option>
   </component>

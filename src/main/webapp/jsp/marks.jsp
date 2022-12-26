@@ -10,6 +10,11 @@
   <style>
     <%@include file="../css/style.css" %>
   </style>
+  <script
+          src="https://code.jquery.com/jquery-3.6.3.min.js"
+          integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+          crossorigin="anonymous">
+  </script>
 </head>
 <body>
 <div class="driversMarks">
@@ -32,7 +37,13 @@
           <td>${mark.trip.getStartPoint()}</td>
           <td>${mark.trip.getFinalPoint()}</td>
           <td>${mark.trip.getTripDate()}</td>
-          <td><a href="/nis/userInfo">Просмотреть информацию</a></td>
+          <td>
+            <div class="w-full flex items-center justify-center space-x-2">
+              <button class="text-gray-700 hover:text-gray-900" onclick="userInfo(${mark.fromUser.userId})">
+                <span class="material-symbols-outlined">visibility</span>
+              </button>
+            </div>
+          </td>
           <td>${mark.getMark()}</td>
         </tr>
       </c:forEach>
@@ -41,6 +52,7 @@
   </div>
 </div>
 </div>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/scripts.js"></script>
 </body>
 </html>
 

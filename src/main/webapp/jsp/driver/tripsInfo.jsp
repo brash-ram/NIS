@@ -57,9 +57,6 @@
                                         <span class="material-symbols-outlined">check</span>
                                     </button>
                                 </c:if>
-                                <button class="text-gray-700 hover:text-gray-900" onclick="deleteTrip(${trip.tripId})">
-                                    <span class="material-symbols-outlined">delete</span>
-                                </button>
                             </div>
                         </td>
                     </tr>

@@ -26,8 +26,8 @@
                     <div class="createTrip-date-title">Дата поездки</div>
 <%--                    <input type="text" id="date" name="date" class="createTrip-date-input">--%>
                     <input type="date" id="date" name="date"
-                           value="2018-07-22"
-                           min="2018-01-01" max="2018-12-31">
+                           value="${minDate}"
+                           min="${minDate}" max="">
                 </div>
                 <div class="createTrip-free-seats">
                     <div class="createTrip-free-seats-title">Количество свободных мест</div>
