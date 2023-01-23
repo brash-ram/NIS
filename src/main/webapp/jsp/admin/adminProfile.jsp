@@ -35,6 +35,9 @@
                 </li>
             </ul>
         </div>
+        <div>
+            <jsp:include page="userListTable.jsp"/>
+        </div>
     </nav>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

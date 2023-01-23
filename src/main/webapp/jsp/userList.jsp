@@ -1,7 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="ru.rsreu.nis.entity.enums.Roles" %>
-<%@ page import="ru.rsreu.nis.entity.enums.UserStatus" %>
 <html>
 <head>
     <title>Список пользователей</title>
@@ -29,59 +27,7 @@
                 <div class="header-user">Список пользователей</div>
             </div>
             <br>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Фамилия</th>
-                    <th>Имя</th>
-                    <th>Статус</th>
-                    <th>Роль в системе</th>
-                    <th>Авторизован</th>
-                    <th>Действия</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach var="session" items="${sessions}">
-                <tr>
-                    <td>${session.getUser().getLastName()}</td>
-                    <td>${session.getUser().getFirstName()}</td>
-                    <td>${session.getUser().userStatus.getRussianName()}</td>
-                    <td>${session.getUser().userRole.getRussianName()}</td>
-                    <td>${session.status.getRussianName()}</td>
-                    <td>
-                        <c:if test="${role.equals(Roles.ADMIN)}">
-                            <div class="w-full flex items-center justify-center space-x-2">
-                                <button class="text-gray-700 hover:text-gray-900" name="submit"
-                                        onclick="deleteUser(${session.getUser().getUserId()})">
-                                    <span class="material-symbols-outlined">delete</span>
-                                </button>
-                                <button class="text-gray-700 hover:text-gray-900" name="submit"
-                                        onclick="changeUser(${session.getUser().getUserId()})">
-                                    <span class="material-symbols-outlined">edit</span>
-                                </button>
-                            </div>
-                        </c:if>
-                        <c:if test="${role.equals(Roles.MODERATOR)}">
-                            <c:if test="${session.getUser().getUserStatus().equals(UserStatus.NOT_BLOCKED)}">
-                                <div class="w-full flex items-center justify-center space-x-2">
-                                    <button class="text-gray-700 hover:text-gray-900" onclick="blockUser(${session.getUser().getUserId()})">
-                                        <span class="material-symbols-outlined">lock</span>
-                                    </button>
-                                </div>
-                            </c:if>
-                            <c:if test="${session.getUser().getUserStatus().equals(UserStatus.BLOCKED)}">
-                                <div class="w-full flex items-center justify-center space-x-2">
-                                    <button class="text-gray-700 hover:text-gray-900" onclick="unblockUser(${session.getUser().getUserId()})">
-                                        <span class="material-symbols-outlined">lock_open</span>
-                                    </button>
-                                </div>
-                            </c:if>
-                        </c:if>
-                    </td>
-                </tr>
-                </c:forEach>
-                </tbody>
-            </table>
+            <jsp:include page="admin/userListTable.jsp"/>
         </div>
     </div>
 </div>
