@@ -2,22 +2,22 @@
 <Context>
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
 
-<!--    <Resource name="jdbc/username"-->
-<!--              auth="Container"-->
-<!--              username="username"-->
-<!--              password="qwerty"-->
-<!--              type="javax.sql.DataSource"-->
-<!--              driverClassName="oracle.jdbc.driver.OracleDriver"-->
-<!--              url="jdbc:oracle:thin:@localhost:1521/XE"-->
-<!--              maxActive="10"-->
-<!--              maxIdle="4"/>-->
-    <Resource name="jdbc/nis"
+    <Resource name="jdbc/username"
               auth="Container"
-              username="user2"
-              password="1234"
+              username="username"
+              password="qwerty"
               type="javax.sql.DataSource"
               driverClassName="oracle.jdbc.driver.OracleDriver"
               url="jdbc:oracle:thin:@localhost:1521/XE"
               maxActive="10"
               maxIdle="4"/>
+<!--    <Resource name="jdbc/nis"-->
+<!--              auth="Container"-->
+<!--              username="user2"-->
+<!--              password="1234"-->
+<!--              type="javax.sql.DataSource"-->
+<!--              driverClassName="oracle.jdbc.driver.OracleDriver"-->
+<!--              url="jdbc:oracle:thin:@localhost:1521/XE"-->
+<!--              maxActive="10"-->
+<!--              maxIdle="4"/>-->
 </Context>

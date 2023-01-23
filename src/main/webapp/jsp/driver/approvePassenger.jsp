@@ -18,7 +18,13 @@
 <div class="approvePassenger">
     <div class="approvePassenger-container">
         <div class="approvePassenger-inner">
-            <div class="table-title title">Заявки на поездки</div><br>
+            <div class="table-title title">
+                <div class="button-wrapper">
+                    <button type="button" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300
+                dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2" onclick="window.history.back()">Назад</button>
+                </div>
+                <div class="header-user">Заявки на поездки</div>
+            </div><br>
             <table class="table">
                 <thead>
                 <tr>

@@ -15,7 +15,13 @@
     <div class="container">
         <div class="addUser-inner">
             <form name="AddUserForm" method="POST" action="addUser">
-                <div class="addUser-title title">Добавление пользователя</div>
+                <div class="addUser-title title">
+                    <div class="button-wrapper">
+                        <button type="button" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300
+                dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2" onclick="window.history.back()">Назад</button>
+                        <div class="header-user">Добавление пользователя</div>
+                    </div>
+                </div>
                 <br>
                 <div class="addUser-firstname">
                     <div class="addUser-firstname-title">Имя</div>

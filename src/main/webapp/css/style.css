@@ -7,6 +7,10 @@ body{
     text-align: center;
     font-family: "Montserrat", sans-serif;
     font-size: 30px;
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    justify-content: flex-start;
 }
 
 .auth-container{
@@ -102,4 +106,15 @@ input[type="text"],input[type="password"]{
 .table td {
     border: 1px solid #dddddd;
     padding: 5px;
+}
+
+.btn {
+    outline: none;
+}
+
+
+
+.title .header-user {
+    margin-right: auto;
+    margin-left: auto;
 }
