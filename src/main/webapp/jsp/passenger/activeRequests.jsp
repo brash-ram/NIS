@@ -9,11 +9,6 @@
     <style>
         <%@include file="../../css/style.css" %>
     </style>
-    <script
-            src="https://code.jquery.com/jquery-3.6.3.min.js"
-            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
-            crossorigin="anonymous">
-    </script>
 </head>
 <body>
 <div class="tripRequests">
@@ -26,44 +21,10 @@
                 </div>
                 <div class="header-user">Активные заявки</div>
             </div><br>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Начальная точка</th>
-                    <th>Конечная точка</th>
-                    <th>Дата поездки</th>
-                    <th>Количество свободных мест</th>
-                    <th>Цена поездки, руб.</th>
-                    <th>Статус заявки</th>
-                    <th>Действия</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach var="request" items="${requests}">
-                    <tr>
-                        <td>${request.trip.getStartPoint()}</td>
-                        <td>${request.trip.getFinalPoint()}</td>
-                        <td>${request.trip.getTripDate()}</td>
-                        <td>${request.trip.getFreeSeats()}</td>
-                        <td>${request.trip.getPrice()}</td>
-                        <td>${request.requestStatus.getRussianName()}</td>
-                        <td>
-                            <div class="w-full flex items-center justify-center space-x-2">
-                                <button class="text-gray-700 hover:text-gray-900" onclick="deleteRequest(${request.requestId})">
-                                    <span class="material-symbols-outlined">delete</span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                </c:forEach>
-                </tbody>
-                </tr>
-                </tbody>
-            </table>
+            <jsp:include page="activeRequestTable.jsp"/>
         </div>
     </div>
 </div>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/scripts.js"></script>
 </body>
 </html>
 

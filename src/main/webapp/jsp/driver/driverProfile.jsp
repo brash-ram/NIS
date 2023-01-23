@@ -39,6 +39,7 @@
         </div>
     </nav>
 </header>
+<jsp:include page="passengersTable.jsp"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
 </body>

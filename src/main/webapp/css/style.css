@@ -23,7 +23,7 @@ body{
 }
 
 .container{
-    width:450px;
+    width:100%;
     background-color: #eaf0fb;
     margin: 55px auto auto auto;
     text-align: center;

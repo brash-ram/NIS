@@ -46,7 +46,13 @@
                         <td>${request.trip.getTripDate()}</td>
                         <td>${request.trip.getPrice()}</td>
                         <td>${request.requestStatus.getRussianName()}</td>
-                        <td></td>
+                        <td>
+                            <div class="w-full flex items-center justify-center space-x-2">
+                                <button class="text-gray-700 hover:text-gray-900" onclick="userInfo(${request.trip.driverId})">
+                                    <span class="material-symbols-outlined">visibility</span>
+                                </button>
+                            </div>
+                        </td>
                         <td>
                             <form class="some_form" name = "SelectMarkForm">
                                 <input type="hidden" name="trip_id" value="${request.trip.tripId}"/>
