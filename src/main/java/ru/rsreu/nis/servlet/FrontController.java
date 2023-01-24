@@ -24,7 +24,7 @@ public class FrontController extends HttpServlet {
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         FrontCommand command = CommandConfig.getCommand(request.getPathInfo());
 
         try {
@@ -32,17 +32,13 @@ public class FrontController extends HttpServlet {
             command.process();
         } catch (Exception exception) {
             exception.printStackTrace();
-//            ExceptionHandler exceptionHandler = new ExceptionHandler();
-//
-//            exceptionHandler.init(getServletContext(), req, res);
-//            exceptionHandler.handleException(exception);
         }
     }
 
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
         FrontCommand command = CommandConfig.getCommand(request.getPathInfo());
 
         try {
@@ -50,22 +46,6 @@ public class FrontController extends HttpServlet {
             command.send();
         } catch (Exception exception) {
             exception.printStackTrace();
-//            ExceptionHandler exceptionHandler = new ExceptionHandler();
-//
-//            exceptionHandler.init(getServletContext(), req, res);
-//            exceptionHandler.handleException(exception);
         }
     }
-
-//    private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String page = null;
-//        ActionFactory client = new ActionFactory();
-//        ActionCommand command = client.defineCommand(request);
-//        page = command.execute(request);
-//
-//        if (page != null) {
-//            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
-//            dispatcher.forward(request, response);
-//        }
-//    }
 }

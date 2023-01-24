@@ -6,6 +6,12 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import ru.rsreu.nis.entity.enums.RequestStatus;
 
+/** * Class that reflects the representation of the
+ * Request Entity in the DB in the ORM style
+ * @author Danila Rudi
+ * @author Maxim Starostin
+ * @version 1.0
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

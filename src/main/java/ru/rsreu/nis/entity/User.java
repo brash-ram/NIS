@@ -10,6 +10,12 @@ import ru.rsreu.nis.entity.enums.UserStatus;
 import javax.security.auth.Subject;
 import java.security.Principal;
 
+/** * Class that reflects the representation of the
+ * User Entity in the DB in the ORM style
+ * @author Danila Rudi
+ * @author Maxim Starostin
+ * @version 1.0
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

@@ -8,6 +8,12 @@ import ru.rsreu.nis.entity.enums.TripStatus;
 
 import java.sql.Date;
 
+/** * Class that reflects the representation of the
+ * Trip Entity in the DB in the ORM style
+ * @author Danila Rudi
+ * @author Maxim Starostin
+ * @version 1.0
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

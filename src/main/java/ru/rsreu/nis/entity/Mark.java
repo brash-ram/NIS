@@ -5,6 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+/** * Class that reflects the representation of the
+ * Mark Entity in the DB in the ORM style
+ * @author Danila Rudi
+ * @author Maxim Starostin
+ * @version 1.0
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
