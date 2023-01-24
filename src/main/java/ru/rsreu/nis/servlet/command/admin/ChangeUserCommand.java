@@ -30,8 +30,8 @@ public class ChangeUserCommand extends FrontCommand {
         Integer userId = Integer.valueOf(request.getParameter(RequestParam.USER_ID));
         User user = userService.getUser(userId);
         request.setAttribute(RequestAttribute.USER, user);
-//        forward(Jsp.ADD_USER);
-        redirect(Route.ADD_USER.getAbsolute());
+        forward(Jsp.ADD_USER);
+//        redirect(Route.ADD_USER.getAbsolute());
     }
 
 }

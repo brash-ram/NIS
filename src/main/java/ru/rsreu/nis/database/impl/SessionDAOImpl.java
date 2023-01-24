@@ -38,25 +38,25 @@ public class SessionDAOImpl extends AbstractDAO implements SessionDAO {
         }
     }
 
-    @Override
-    public List<Session> findAllByUserStatus(String status) {
-        String query = resourcer.getString("session.find.all.status");
-        List<Session> sessions = new ArrayList<>();
-
-        try (PreparedStatement st = connection.prepareStatement(query)) {
-            st.setString(1, status);
-
-            ResultSet resultSet = st.executeQuery();
-
-            while (resultSet.next()) {
-                sessions.add(DAOMapper.mapSession(resultSet));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return sessions;
-    }
+//    @Override
+//    public List<Session> findAllByUserStatus(String status) {
+//        String query = resourcer.getString("session.find.all.status");
+//        List<Session> sessions = new ArrayList<>();
+//
+//        try (PreparedStatement st = connection.prepareStatement(query)) {
+//            st.setString(1, status);
+//
+//            ResultSet resultSet = st.executeQuery();
+//
+//            while (resultSet.next()) {
+//                sessions.add(DAOMapper.mapSession(resultSet));
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//
+//        return sessions;
+//    }
 
     @Override
     public void save(Session session) {

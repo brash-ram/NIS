@@ -44,6 +44,7 @@ public class LoginCommand extends FrontCommand {
             response.sendRedirect(startRoute.getAbsolute());
         } catch (Exception e) {
             e.printStackTrace();
+            response.sendRedirect(Route.LOGIN.getAbsolute());
         }
     }
 }

@@ -101,11 +101,6 @@ public class MarkDAOImpl extends AbstractDAO implements MarkDAO {
     }
 
     @Override
-    public Mark findMarkById(Integer id) {
-        return null;
-    }
-
-    @Override
     public void update(Mark mark) {
         String query = resourcer.getString("mark.update");
 

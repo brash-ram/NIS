@@ -35,7 +35,7 @@ public interface SessionDAO {
     /**
      * Deletes Session Entity from DB by userId
      *
-     * @param user ID of required User Entity
+     * @param userId ID of required User Entity
      */
     void delete(Integer userId);
 
