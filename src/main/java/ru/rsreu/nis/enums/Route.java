@@ -25,7 +25,7 @@ public enum Route {
     MODER_PROFILE("/moderProfile"),
     TRIP_LIST("/tripList"),
     REQUEST_LIST("/requestList"),
-    LOGOUT("/login"),
+    LOGOUT("/logout"),
     CHANGE_USER("/changeUser"),
     DELETE_USER("/deleteUser"),
     BLOCK_USER("/blockUser"),

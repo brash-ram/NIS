@@ -1,6 +1,6 @@
 package ru.rsreu.nis.filter;
 
-//import ru.rsreu.exchangeofthings.constant.ContentType;
+import ru.rsreu.nis.constant.ContentType;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -17,16 +17,16 @@ public class ContentTypeFilter implements Filter {
             throws IOException, ServletException {
         String uri = ((HttpServletRequest)request).getRequestURI();
 
-//        response.setContentType(ContentType.DEFAULT);
-//
-//        for (String fileType: ContentType.getFileTypes()) {
-//            if (uri.contains(fileType)) {
-//                String mimeType = ContentType.getContentType(fileType);
-//
-//                response.setContentType(mimeType);
-//                break;
-//            }
-//        }
+        response.setContentType(ContentType.DEFAULT);
+
+        for (String fileType: ContentType.getFileTypes()) {
+            if (uri.contains(fileType)) {
+                String mimeType = ContentType.getContentType(fileType);
+
+                response.setContentType(mimeType);
+                break;
+            }
+        }
 
         response.setCharacterEncoding(ENCODING);
         request.setCharacterEncoding(ENCODING);

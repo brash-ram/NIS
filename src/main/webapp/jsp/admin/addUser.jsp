@@ -1,5 +1,4 @@
-
-
+<%@ page import="ru.rsreu.nis.entity.enums.Roles" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -19,8 +18,8 @@
                     <div class="button-wrapper">
                         <button type="button" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300
                 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2" onclick="window.history.back()">Назад</button>
-                        <div class="header-user">Добавление пользователя</div>
                     </div>
+                    <div class="header-user">Добавление пользователя</div>
                 </div>
                 <br>
                 <div class="addUser-firstname">

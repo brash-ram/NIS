@@ -8,6 +8,7 @@ import ru.rsreu.nis.entity.User;
 import ru.rsreu.nis.entity.enums.SessionStatus;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 @Data
 @AllArgsConstructor
@@ -16,6 +17,6 @@ import java.sql.Date;
 public class UserListResponseDTO {
     private Integer session_id;
     private User user;
-    private Date activeUntil;
+    private Timestamp activeUntil;
     private SessionStatus status;
 }

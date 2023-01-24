@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 @Data
 @AllArgsConstructor
@@ -14,9 +15,9 @@ import java.sql.Date;
 public class Session {
     private Integer session_id;
     private User user;
-    private Date activeUntil;
+    private Timestamp activeUntil;
 
-    public Session(User user, Date activeUntil) {
+    public Session(User user, Timestamp activeUntil) {
         this.user = user;
         this.activeUntil = activeUntil;
     }

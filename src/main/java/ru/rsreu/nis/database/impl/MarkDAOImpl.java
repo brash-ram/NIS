@@ -3,7 +3,6 @@ package ru.rsreu.nis.database.impl;
 import ru.rsreu.nis.database.AbstractDAO;
 import ru.rsreu.nis.database.dao.MarkDAO;
 import ru.rsreu.nis.entity.Mark;
-import ru.rsreu.nis.entity.Request;
 import ru.rsreu.nis.mapper.DAOMapper;
 
 import java.sql.PreparedStatement;

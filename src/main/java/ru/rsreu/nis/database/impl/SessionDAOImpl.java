@@ -5,7 +5,6 @@ import ru.rsreu.nis.database.dao.SessionDAO;
 import ru.rsreu.nis.entity.Session;
 import ru.rsreu.nis.entity.User;
 import ru.rsreu.nis.mapper.DAOMapper;
-import ru.rsreu.nis.resourcer.ProjectResourcer;
 
 import java.sql.*;
 import java.util.ArrayList;

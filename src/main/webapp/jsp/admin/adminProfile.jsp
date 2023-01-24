@@ -29,7 +29,7 @@
                         списка пользователей </a>
                 </li>
                 <li>
-                    <a href="/nis/login"
+                    <a href="/nis/logout"
                        class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700"
                        aria-current="page">Выйти из системы</a>
                 </li>

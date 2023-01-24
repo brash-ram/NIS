@@ -6,19 +6,56 @@ import ru.rsreu.nis.enums.Route;
 import java.util.List;
 import java.util.Map;
 
+import static ru.rsreu.nis.enums.Route.*;
+
 public class AuthConfig {
     private static final Map<Roles, List<Route>> RolesRoutes = Map.ofEntries(
             Map.entry(Roles.DRIVER, List.of(
-                    Route.LOGIN
+                    LOGOUT,
+                    LOGIN,
+                    USERS,
+                    USER_INFO,
+                    DRIVER_PROFILE,
+                    CREATE_TRIP,
+                    COMPLETE_TRIP,
+                    CREATE_MARK,
+                    MARKS,
+                    APPROVE_PASSENGER,
+                    DISAPPROVE_PASSENGER,
+                    TRIP_PARAMETERS,
+                    TRIPS_INFO
             )),
             Map.entry(Roles.PASSENGER, List.of(
-                    Route.LOGIN
+                    LOGOUT,
+                    LOGIN,
+                    PASSENGER_PROFILE,
+                    CREATE_REQUEST,
+                    MARKS,
+                    CREATE_MARK,
+                    RATE_DRIVER,
+                    MY_REQUESTS,
+                    ACTIVE_REQUESTS,
+                    REQUESTS_HISTORY
             )),
             Map.entry(Roles.ADMIN, List.of(
-
+                    LOGOUT,
+                    LOGIN,
+                    ADMIN_PROFILE,
+                    CHANGE_USER,
+                    DELETE_USER,
+                    ADD_USER,
+                    USER_LIST
             )),
             Map.entry(Roles.MODERATOR, List.of(
-
+                    LOGIN,
+                    MODER_PROFILE,
+                    TRIP_LIST,
+                    REQUEST_LIST,
+                    LOGOUT,
+                    BLOCK_USER,
+                    UNBLOCK_USER,
+                    PASSENGER_LIST,
+                    USER_LIST
             ))
     );
 
