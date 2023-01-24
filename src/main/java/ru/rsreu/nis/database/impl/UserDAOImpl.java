@@ -94,11 +94,11 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
-    public void delete(User user) {
-        String query = resourcer.getString("query.user.delete");
+    public void delete(Integer userId) {
+        String query = resourcer.getString("user.delete");
 
         try (PreparedStatement st = connection.prepareStatement(query)) {
-            st.setInt(1, user.getUserId());
+            st.setInt(1, userId);
 
             st.executeUpdate();
         } catch (SQLException e) {

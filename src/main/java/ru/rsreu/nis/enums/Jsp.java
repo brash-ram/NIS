@@ -27,10 +27,7 @@ public enum Jsp {
 
     MODER_PROFILE("/jsp/moder/moderProfile.jsp"),
     TRIP_LIST("/jsp/moder/tripList.jsp"),
-    REQUEST_LIST("/jsp/moder/requestList.jsp"),
-    NOT_FOUND("/pages/404.jsp"),
-
-    REDIRECT("/templates/redirect.jsp");
+    REQUEST_LIST("/jsp/moder/requestList.jsp");
 
     private final String route;
 

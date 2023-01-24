@@ -37,7 +37,7 @@ public interface SessionDAO {
      *
      * @param user ID of required User Entity
      */
-    void delete(User user);
+    void delete(Integer userId);
 
     /**
      * Finds for a Session Entity by ID

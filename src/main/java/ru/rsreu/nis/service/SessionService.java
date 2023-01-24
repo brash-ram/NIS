@@ -80,4 +80,8 @@ public class SessionService {
         return sessionDAO.findAll();
     }
 
+    public void deleteSession(Integer userId) {
+        sessionDAO.delete(userId);
+    }
+
 }

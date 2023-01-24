@@ -91,11 +91,11 @@ public class SessionDAOImpl extends AbstractDAO implements SessionDAO {
     }
 
     @Override
-    public void delete(User user) {
+    public void delete(Integer userId) {
         String query = resourcer.getString("session.delete");
 
         try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setLong(1, user.getUserId());
+            statement.setLong(1, userId);
 
             statement.executeUpdate();
         } catch (SQLException e) {

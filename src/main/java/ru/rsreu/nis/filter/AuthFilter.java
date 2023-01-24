@@ -32,6 +32,7 @@ public class AuthFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
         String path = request.getPathInfo();
+        path = path.split("&")[0];
 
         if (path.equals(Route.NOT_FOUND.getRelative())) {
             filterChain.doFilter(request, response);

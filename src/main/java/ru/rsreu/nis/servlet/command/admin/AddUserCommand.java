@@ -1,5 +1,6 @@
 package ru.rsreu.nis.servlet.command.admin;
 
+import ru.rsreu.nis.constant.RequestAttribute;
 import ru.rsreu.nis.constant.RequestParam;
 import ru.rsreu.nis.entity.User;
 import ru.rsreu.nis.entity.enums.Roles;
@@ -27,6 +28,13 @@ public class AddUserCommand extends FrontCommand {
 
     @Override
     public void process() throws ServletException, IOException {
+        String userIdObject = (String) request.getAttribute(RequestParam.USER_ID);
+        String userIdString = request.getParameter(RequestParam.USER_ID);
+        if (userIdString != null) {
+            Integer userId = Integer.valueOf(userIdString);
+            User user = userService.getUser(userId);
+            request.setAttribute(RequestAttribute.USER, user);
+        }
         forward(Jsp.ADD_USER);
     }
 
@@ -39,7 +47,7 @@ public class AddUserCommand extends FrontCommand {
             e.printStackTrace();
             return;
         }
-        userService.save(user);
+        userService.updateUser(user);
         response.sendRedirect(Route.ADMIN_PROFILE.getAbsolute());
     }
 

@@ -11,7 +11,7 @@ import java.io.IOException;
 public class EmptyCommand extends FrontCommand {
     @Override
     public void process() throws ServletException, IOException {
-        forward(Jsp.NOT_FOUND);
+        forward(Jsp.LOGIN);
     }
 
     @Override

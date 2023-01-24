@@ -20,12 +20,16 @@ function deleteUser(userId) {
 }
 
 function changeUser(userId) {
-    $.post("changeUser", {user_dd: userId}, function () {
-        console.log("deleteUser");
-    }).fail(function () {
-        console.log("deleteUser error!");
-    });
-    window.location.reload();
+    // $.post("changeUser", {user_id: userId}, function () {
+    //     console.log("changeUser");
+    // }).fail(function () {
+    //     console.log("changeUser error!");
+    // });
+    // const url = new URL('http://localhost:8080/nis/addUser')
+    // url.searchParams.set('session', '1')
+    window.location.href = "http://localhost:8080/nis/addUser&user_id="+userId;
+    // window.location.href = url.href;
+    // window.location.reload();
 }
 
 function createRequest(tripId) {

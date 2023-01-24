@@ -58,4 +58,12 @@ public class UserService {
         User user = this.getUser(userId);
         this.updateUser(user.setUserStatus(UserStatus.NOT_BLOCKED));
     }
+
+    public void deleteUser(Integer userId) {
+        userDAO.delete(userId);
+    }
+
+    public void changeUser(User user) {
+        userDAO.update(user);
+    }
 }

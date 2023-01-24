@@ -1,5 +1,6 @@
 <%@ page import="ru.rsreu.nis.entity.enums.Roles" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,27 +25,35 @@
                 <br>
                 <div class="addUser-firstname">
                     <div class="addUser-firstname-title">Имя</div>
-                    <input type="text" id="firstname" name="first_name" class="addUser-firstname-input">
+                    <input type="text" id="firstname" name="first_name" class="addUser-firstname-input" value="${user.firstName}">
                 </div>
                 <div class="addUser-lastname">
                     <div class="addUser-lastname-title">Фамилия</div>
-                    <input type="text" id="lastname" name="last_name" class="addUser-lastname-input">
+                    <input type="text" id="lastname" name="last_name" class="addUser-lastname-input" value="${user.lastName}">
                 </div>
                 <div class="addUser-login">
                     <div class="addUser-login-title">Логин</div>
-                    <input type="text" id="login" autocomplete="off" name="login" class="addUser-login-input">
+                    <input type="text" id="login" autocomplete="off" name="login" class="addUser-login-input" value="${user.login}">
                 </div>
                 <div class="addUser-password">
                     <div class="addUser-password-title">Пароль</div>
-                    <input type="password" id="password" autocomplete="off" name="password" class="addUser-password-input">
+                    <input type="password" id="password" autocomplete="off" name="password" class="addUser-password-input" value="${user.password}">
                 </div>
                 <div class="addUser-role">
-                    <label>Выберите роль: </label>
+                    <label>Выберите роль:</label>
                     <select id="selectMark" name="role" >
-                        <option value="${Roles.DRIVER}">Водитель</option>
-                        <option value="${Roles.PASSENGER}">Пассажир</option>
-                        <option value="${Roles.ADMIN}">Администратор</option>
-                        <option value="${Roles.MODERATOR}">Модератор</option>
+                        <c:forEach items="${Roles.getAllRoles()}" var="role">
+                            <c:if test="${user != null && user.userRole.equals(role)}">
+                                <option value="${role}" selected>${role.getRussianName()}</option>
+                            </c:if>
+                            <c:if test="${user == null || !user.userRole.equals(role)}">
+                                <option value="${role}">${role.getRussianName()}</option>
+                            </c:if>
+<%--                            <option value="${Roles.DRIVER}">Водитель</option>--%>
+<%--                            <option value="${Roles.PASSENGER}">Пассажир</option>--%>
+<%--                            <option value="${Roles.ADMIN}">Администратор</option>--%>
+<%--                            <option value="${Roles.MODERATOR}">Модератор</option>--%>
+                        </c:forEach>
                     </select>
                 </div>
                 <br>

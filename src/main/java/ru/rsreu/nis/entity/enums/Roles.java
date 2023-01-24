@@ -1,24 +1,25 @@
 package ru.rsreu.nis.entity.enums;
 
-public enum Roles {
-    ADMIN("ADMIN"),
-    MODERATOR("MODERATOR"),
-    DRIVER("DRIVER"),
-    PASSENGER("PASSENGER");
+import java.util.ArrayList;
+import java.util.List;
 
-    private String  role;
+public enum Roles {
+    ADMIN("Администратор"),
+    MODERATOR("Модератор"),
+    DRIVER("Водитель"),
+    PASSENGER("Пассажир");
+
+    private String role;
 
     Roles(String role) {
         this.role = role;
     }
 
     public String getRussianName() {
-        switch (role) {
-            case "ADMIN": return "Администратор";
-            case "MODERATOR": return "Модератор";
-            case "DRIVER": return "Водитель";
-            case "PASSENGER": return "Пассажир";
-        }
-        return null;
+        return role;
+    }
+
+    public static List<Roles> getAllRoles() {
+        return List.of(ADMIN, MODERATOR, DRIVER, PASSENGER);
     }
 }

@@ -89,7 +89,7 @@ public class CommandConfig {
 
     public static FrontCommand getCommand(String path) {
         for (Route route : commandRoutes) {
-            if (route.getRelative().equalsIgnoreCase(path)) {
+            if (route.getRelative().equalsIgnoreCase(path.split("&")[0])) {
                 return commands.get(route);
             }
         }

@@ -51,7 +51,7 @@ public interface UserDAO {
      *
      * @param user required User Entity to delete
      */
-    void delete(User user);
+    void delete(Integer userId);
 
     /**
      * Saves User Entity to DB
