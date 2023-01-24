@@ -28,7 +28,6 @@ public class AddUserCommand extends FrontCommand {
 
     @Override
     public void process() throws ServletException, IOException {
-        String userIdObject = (String) request.getAttribute(RequestParam.USER_ID);
         String userIdString = request.getParameter(RequestParam.USER_ID);
         if (userIdString != null) {
             Integer userId = Integer.valueOf(userIdString);
@@ -47,12 +46,13 @@ public class AddUserCommand extends FrontCommand {
             e.printStackTrace();
             return;
         }
-        userService.updateUser(user);
+        userService.save(user);
         response.sendRedirect(Route.ADMIN_PROFILE.getAbsolute());
     }
 
     private User mapUser() {
         return new User(
+                request.getParameter("id") != null ? Integer.valueOf(request.getParameter("id")) : null,
                 request.getParameter(RequestParam.LOGIN),
                 request.getParameter(RequestParam.PASSWORD),
                 UserStatus.NOT_BLOCKED,

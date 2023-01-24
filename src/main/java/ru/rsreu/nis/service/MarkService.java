@@ -71,17 +71,5 @@ public class MarkService {
         } else {
             markDAO.save(new Mark(fromUser, toUser, Integer.valueOf(newMark), trip));
         }
-
-//        if (mark != null) {
-//            if (newMark == null) {
-//                markDAO.delete(mark.getMarkId());
-//            } else {
-//                markDAO.update(mark.setMark(Integer.valueOf(newMark)));
-//            }
-//        } else {
-//            if (newMark != null) {
-//                markDAO.save(new Mark(fromUser, trip.getDriverId(), Integer.valueOf(newMark), trip));
-//            }
-//        }
     }
 }

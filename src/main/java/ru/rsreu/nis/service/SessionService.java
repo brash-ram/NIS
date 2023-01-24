@@ -41,7 +41,7 @@ public class SessionService {
         User user = userService.getUser(login);
 
         if (user.getUserStatus().equals(UserStatus.BLOCKED) || !user.getPassword().equals(password)) {
-            throw new Exception("Not user");
+            throw new Exception("Not authorized");
         }
 
         Timestamp activeUntil = new Timestamp(System.currentTimeMillis() + SESSION_TIME_LIVE);

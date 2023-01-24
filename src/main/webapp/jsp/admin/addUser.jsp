@@ -23,6 +23,9 @@
                     <div class="header-user">Добавление пользователя</div>
                 </div>
                 <br>
+<%--                <div class="hidden">--%>
+<%--                    <input type="text" id="id_id" name="id" class="addUser-firstname-input" value="${user.user_id}">--%>
+<%--                </div>--%>
                 <div class="addUser-firstname">
                     <div class="addUser-firstname-title">Имя</div>
                     <input type="text" id="firstname" name="first_name" class="addUser-firstname-input" value="${user.firstName}">

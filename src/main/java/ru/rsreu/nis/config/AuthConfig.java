@@ -22,6 +22,7 @@ public class AuthConfig {
                     MARKS,
                     APPROVE_PASSENGER,
                     DISAPPROVE_PASSENGER,
+                    PASSENGER_LIST,
                     TRIP_PARAMETERS,
                     TRIPS_INFO
             )),
@@ -32,6 +33,7 @@ public class AuthConfig {
                     CREATE_REQUEST,
                     MARKS,
                     CREATE_MARK,
+                    USER_INFO,
                     RATE_DRIVER,
                     MY_REQUESTS,
                     ACTIVE_REQUESTS,
@@ -43,6 +45,7 @@ public class AuthConfig {
                     ADMIN_PROFILE,
                     CHANGE_USER,
                     DELETE_USER,
+                    USER_INFO,
                     ADD_USER,
                     USER_LIST
             )),
@@ -51,10 +54,10 @@ public class AuthConfig {
                     MODER_PROFILE,
                     TRIP_LIST,
                     REQUEST_LIST,
+                    USER_INFO,
                     LOGOUT,
                     BLOCK_USER,
                     UNBLOCK_USER,
-                    PASSENGER_LIST,
                     USER_LIST
             ))
     );
