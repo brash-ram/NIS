@@ -12,6 +12,7 @@ import ru.rsreu.nis.entity.enums.UserStatus;
 import ru.rsreu.nis.utils.SessionUtil;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -43,7 +44,7 @@ public class SessionService {
             throw new Exception("Not user");
         }
 
-        Date activeUntil = new Date(System.currentTimeMillis() + SESSION_TIME_LIVE);
+        Timestamp activeUntil = new Timestamp(System.currentTimeMillis() + SESSION_TIME_LIVE);
         Optional<Session> optionalSession = sessionDAO.findByUserId(user.getUserId());
         Session session = optionalSession.isPresent() ?
                 optionalSession.get().setActiveUntil(activeUntil) :

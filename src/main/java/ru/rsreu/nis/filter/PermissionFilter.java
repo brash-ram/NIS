@@ -1,5 +1,6 @@
 package ru.rsreu.nis.filter;
 
+import ru.rsreu.nis.config.AuthConfig;
 import ru.rsreu.nis.entity.User;
 import ru.rsreu.nis.enums.Route;
 import ru.rsreu.nis.utils.PermissionUtil;
@@ -48,6 +49,7 @@ public class PermissionFilter implements Filter {
             return;
         }
 
-        response.sendRedirect(Route.NOT_FOUND.getAbsolute());
+        Route startRoute = AuthConfig.getStartPage(user.get().getUserRole());
+        response.sendRedirect(startRoute.getAbsolute());
     }
 }
