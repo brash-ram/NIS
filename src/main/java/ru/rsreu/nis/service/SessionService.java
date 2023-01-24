@@ -66,7 +66,8 @@ public class SessionService {
 
     public List<UserListResponseDTO> getAllUserList(User user) {
         List<Session> sessions = this.getAllSessions();
-        return sessions.stream().filter(session -> !session.getUser().getUserRole().equals(Roles.ADMIN))
+        return sessions.stream().filter(session ->
+                        user.getUserRole().equals(Roles.ADMIN) || !session.getUser().getUserRole().equals(Roles.ADMIN))
                 .map(session -> new UserListResponseDTO(
                 session.getSession_id(),
                 session.getUser(),

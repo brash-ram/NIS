@@ -46,13 +46,19 @@ public class AddUserCommand extends FrontCommand {
             e.printStackTrace();
             return;
         }
-        userService.save(user);
+        if (user.getUserId() != null) {
+            userService.updateUser(user);
+        } else {
+            userService.save(user);
+        }
+
         response.sendRedirect(Route.ADMIN_PROFILE.getAbsolute());
     }
 
     private User mapUser() {
+        String id = request.getParameter("id");
         return new User(
-                request.getParameter("id") != null ? Integer.valueOf(request.getParameter("id")) : null,
+                id != null && !id.isEmpty() ? Integer.valueOf(request.getParameter("id")) : null,
                 request.getParameter(RequestParam.LOGIN),
                 request.getParameter(RequestParam.PASSWORD),
                 UserStatus.NOT_BLOCKED,
